@@ -293,7 +293,7 @@ h4{
 .card-container{
     height: 370px;
     width: 1264px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: center;
