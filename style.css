@@ -293,7 +293,6 @@ h4{
 .card-container{
     height: 370px;
     width: 1264px;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -350,7 +349,6 @@ h4{
 .poster{
     height: 230px;
     width: 1000px;
-    /* border: 1px solid black; */
     border-radius: 20px;
     background-color: #2C2E36;
     cursor: pointer;
