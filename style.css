@@ -7,6 +7,10 @@ header{
     z-index: 99;
     background-color: white;
 }
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+    justify-content: start;
+}
 .header {
     padding-top: 8px;
     margin-left: 70px;
@@ -472,19 +476,25 @@ h1{
         width: 100%;
     }
 
-    .container-fluid{
-        width: 100%;
+    .top-div{
+        width: 200px;
     }
 
+    .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+      max-width: 100%;  
+    }
 
     body{
         width: 100%;
     }
 
+    
+
     header{
         border-bottom: 1px solid gainsboro;
         background-color: white;
         width: 100%;
+        display: flex;
     }
     .header {
         padding-top: 8px;
@@ -499,18 +509,17 @@ h1{
         height: auto;
         width: 100%;
         /* border: 1px solid black; */
+        display: block;
         margin-left: 2px;
         align-items: center;
         margin-top: 0px;
         margin-bottom: 15px;
-        position: sticky;
-        top: 0px;
     }
 
     .ser-item-1{
         position: sticky;
-        border: 1px solid black;
         top: 0px;
+        border: 1px solid black;
     }
 
     .menu-svg{
@@ -530,6 +539,10 @@ h1{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    select{
+        background-color: white;
     }
 
     .nav-link{
@@ -647,7 +660,7 @@ h1{
     }
 
     .card{
-        width: 40%;
+        width: 46%;
         height: auto;
         min-height: 200px;
     }
