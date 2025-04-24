@@ -14,6 +14,9 @@ header{
     padding-bottom: 5px;
 }
 
+.menu-svg{
+    display: none;
+}
 
 .motor-a{
     display: flex;
@@ -270,6 +273,16 @@ header{
     align-items: center;
 }
 
+.all-cate-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-cate-head p{
+    display: none;
+}
+
 .all-categories-items{
     height: 160px;
     width: 120px;
@@ -449,6 +462,274 @@ h1{
     text-align: end;
     padding-right: 20px;padding-top: 10px;
     cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    nav{
+        width: 100%;
+    }
+
+    .container-fluid{
+        width: 100%;
+    }
+
+
+    body{
+        width: 100%;
+    }
+
+    header{
+        border-bottom: 1px solid gainsboro;
+        background-color: white;
+        width: 100%;
+    }
+    .header {
+        padding-top: 8px;
+        margin-left:0px;
+        margin-right: 0px;
+        padding-bottom: 5px;
+        width: 100%;
+
+    }
+
+    .search-bar-container{
+        height: auto;
+        width: 100%;
+        /* border: 1px solid black; */
+        margin-left: 2px;
+        align-items: center;
+        margin-top: 0px;
+        margin-bottom: 15px;
+        position: sticky;
+        top: 0px;
+    }
+
+    .ser-item-1{
+        position: sticky;
+        border: 1px solid black;
+        top: 0px;
+    }
+
+    .menu-svg{
+        display: block;
+        height: 24px;
+        width: 24px;
+        margin-right: 25px;
+    }
+
+    .olx-svg{
+        height: 36px;
+        width: 36px;
+    }
+
+    .container-fluid{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link{
+        padding: 0px;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    .ser-item-1{
+        width: 330px;
+    }
+
+    .dropdown-svg{
+        display: none;
+    }
+
+    .ser-item-2{
+        display: none;
+    }
+
+    .ser-item-3{
+       display: none;
+    }
+
+    .sell-svg{
+        display: none;
+    }
+
+    .location-bar{
+        display: flex;
+        align-items: center;
+        gap: px;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .menu-div{
+        display: none;
+    }
+
+    .static-img{
+        display: none;
+    }
+
+    .animated-img{
+        display: none;
+
+    }
+
+    .slider{
+        background-image: url('https://images.olx.com.pk/thumbnails/527654933-800x600.webp');
+        width: 100%;
+        margin-left: 0px;
+        background-size: cover;
+    }
+
+    .all-cate-container{
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+
+    .media-all-categori{
+        display: none;
+    }
+
+    .media-img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .all-cate-container{
+        width: 100%;
+    }
+    
+    .all-categories-item{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 0px;
+        justify-content: start;
+        flex-wrap: nowrap;
+
+    }
+
+    .all-categories-items{
+        width: 80px;
+        height: 130px;
+
+    }
+
+    .all-categories-items p{
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    .all-cate-head p{
+        display: block;
+        font-weight: 700;
+        color: #3A7BFF;
+        padding-right: 18px;
+    }
+
+    .card-container{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .card{
+        width: 40%;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .card-body > p{
+        margin: 0px;
+        line-height: 17px;
+    }
+
+    .card-body .product-area{
+        font-size: small;
+        line-height: 13px;
+        margin-top: 10px;
+    }
+
+    .card-img-top{
+        height: 160px;
+    }
+
+    .card-img-last{
+        height: 160px;
+
+    }
+
+    .card-text > strong{
+        font-size: small;
+    }
+
+    .poster{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .poster >h1{
+        margin-left: 15px;
+
+    }
+
+    .poster > div > p{
+        margin-top: 0px;
+        margin-left:15px ;
+    }
+
+    .last-sec{
+        width: 100%;
+        display: none;
+    }
+
+    .last-sec > div > img{
+        display: none;
+    }
+
+    .last-sec > div{
+        width: 100%;
+    }
+
+    .footer-sec{
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-last-items{
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .head{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .head > p{
+        margin: 0px;
+        padding: 0px;
+    }
+    
+
 }
 
 
