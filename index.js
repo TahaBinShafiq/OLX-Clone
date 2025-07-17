@@ -23,7 +23,7 @@ async function getData() {
                 <p class="desc">${description}</p>
                 <div class="bottom">
                     <div class="price">
-                        <span class="new">${price}</span>
+                        <span class="new">$${price}</span>
                     </div>
                     <button class="btn">
                         <span>Add to Cart</span>
