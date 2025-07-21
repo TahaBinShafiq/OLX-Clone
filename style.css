@@ -657,6 +657,7 @@ h1 {
     background: linear-gradient(45deg, #27272a, #3f3f46);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    color: #22C55E;
 }
 
 .btn:before {
