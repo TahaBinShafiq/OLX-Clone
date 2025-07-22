@@ -1253,4 +1253,10 @@ h1 {
     display: block !important;
    }
 
+   .modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
 }
