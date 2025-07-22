@@ -34,9 +34,6 @@ header {
     width: 90%;
 }
 
-.login-svg {
-    margin-left: 0px;
-}
 
 .menu-svg {
     display: none;
@@ -61,10 +58,6 @@ header {
     justify-content: space-between;
 }
 
-.login-svg {
-    margin-left: 400%;
-}
-
 
 .motor-a:hover .motor-svg {
     background-color: #EBF1FF;
@@ -72,6 +65,10 @@ header {
 
 .motor-a:hover .svg-hover {
     fill: #3A7BFF;
+}
+
+.profile-svg{
+    display: none !important; 
 }
 
 /* Search-bar-Section */
@@ -350,18 +347,7 @@ h4 {
 
 /* Mobile Card Section  */
 
-.card-container {
-    height: fit-content;
-    width: 1264px;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 50px;
 
-}
 
 
 /* sider free Chatgpt translator  */
@@ -408,7 +394,7 @@ h1 {
     flex-direction: row;
     margin-top: 20px;
     height: 200px;
-    width: 1264px;
+    width: 100%;
     /* border: 1px solid black; */
     background-color: #F7F8F9;
     align-items: center;
@@ -437,6 +423,7 @@ h1 {
     justify-content: center;
     padding-top: 20px;
     background-color: #EBEEEF;
+    margin: 0px auto;
 
 }
 
@@ -509,10 +496,25 @@ h1 {
 }
 
 
+.card-container {
+    height: fit-content;
+    width: 1264px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 
 .card {
-    width: 360px;
+    width: 250px;
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -553,7 +555,7 @@ h1 {
 }
 
 .img {
-    height: 200px;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -569,37 +571,37 @@ h1 {
 }
 
 .info {
-    padding: 20px;
+    padding: 10px;
 }
 
 .cat {
-    font-size: 11px;
+    font-size: 8px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #71717a;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     color: #18181b;
-    margin: 0 0 10px;
+    margin: 0 0 2px;
     letter-spacing: -0.5px;
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 10px;
     color: #52525b;
     line-height: 1.4;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
 .feats {
     display: flex;
     gap: 6px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .feat {
@@ -615,7 +617,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
 .price {
@@ -637,7 +639,7 @@ h1 {
     color: #18181b;
 }
 
-.btn {
+.btn-1{
     background: linear-gradient(45deg, #18181b, #27272a);
     color: #fff;
     border: none;
@@ -653,14 +655,14 @@ h1 {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover {
+.btn-1:hover {
     background: linear-gradient(45deg, #27272a, #3f3f46);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     color: #22C55E;
 }
 
-.btn:before {
+.btn-1:before {
     content: "";
     position: absolute;
     top: 0;
@@ -674,7 +676,7 @@ h1 {
     transition: 0.5s;
 }
 
-.btn:hover:before {
+.btn-1:hover:before {
     left: 100%;
 }
 
@@ -682,7 +684,7 @@ h1 {
     transition: transform 0.3s;
 }
 
-.btn:hover .icon {
+.btn-1:hover .icon {
     transform: rotate(-10deg) scale(1.1);
 }
 
@@ -715,19 +717,137 @@ h1 {
 
 
 
+/* .ser-item-3 {
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ser-item-3:hover {
+  transform: scale(1.05);
+} */
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(3px);
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Close (X) button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ff4d4d;
+}
+
+/* Inputs */
+.inp , .passwerd {
+  padding: 12px;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.inp:focus {
+  border-color: #4facfe;
+}
+
+/* Button */
+.btn-2 {
+  padding: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #000000, #464646);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-2:hover {
+  background: linear-gradient(135deg, #706f6f, #666766);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
 
 
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
 
+.password-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* padding-right for eye */
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.toggle-eye {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.eye-img {
+  width: 22px;
+  height: 22px;
+}
 
 
 
 
 @media screen and (max-width: 600px) {
-    .login-svg {
-        margin-left: 10px;
-    }
 
     nav {
         width: 100%;
@@ -1120,10 +1240,17 @@ h1 {
         margin-left: 30px;
     }
 
-    .btn {
+    .btn-1 {
         width: 100%;
         justify-content: center;
     }
 
+   .width{
+    width: 75%;
+   }
+
+   .profile-svg{
+    display: block !important;
+   }
 
 }

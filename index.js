@@ -26,7 +26,7 @@ async function getData() {
     cardElement.innerHTML += ` <div class="card">
   <div class="badge">Stock ${stock}</div>
   <div class="tilt">
-    <div class="img"><img src="${images}" alt="Premium Laptop"></div>
+    <div class="img"><img src="${images[0]}" alt="Premium Laptop"></div>
   </div>
   <div class="info">
     <div class="cat">${category}</div>
@@ -42,7 +42,7 @@ async function getData() {
         <span class="new">$${price}</span>
           <div class="stock">${availabilityStatus}</div>
       </div>
-      <button class="btn">
+      <button class="btn-1">
         <span>Add to Cart</span>
         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4" />
@@ -62,3 +62,24 @@ async function getData() {
 
 getData();
 
+function openLoginModal() {
+  document.getElementById("loginModal").style.display = "block";
+}
+
+function closeLoginModal() {
+  document.getElementById("loginModal").style.display = "none";
+}
+
+
+let passInput = document.getElementById("passwordInput");
+let passEye = document.getElementById("eye-img");
+
+function passwrodTypeChnge() {
+  if (passInput.type === "password") {
+    passInput.type = "text";
+    passEye.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
+  } else {
+    passInput.type = "password";
+    passEye.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
+  }
+};
