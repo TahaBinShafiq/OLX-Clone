@@ -3,8 +3,6 @@ let loader = document.getElementById("main-div");
 
 
 async function getData() {
-
-
   loader.style.display = "block";
   cardElement.style.display = "none";
 
@@ -22,7 +20,6 @@ async function getData() {
   products.map((product) => {
     let { title, description, category, images, price, availabilityStatus, stock } = product;
     let { width, height, depth } = product.dimensions;
-    console.log(width)
     cardElement.innerHTML += ` <div class="card">
   <div class="badge">Stock ${stock}</div>
   <div class="tilt">
@@ -71,15 +68,179 @@ function closeLoginModal() {
 }
 
 
-let passInput = document.getElementById("passwordInput");
+function openRegisterModal() {
+  closeLoginModal();
+  document.getElementById("registerModal").style.display = "block";
+}
+
+function closeRegisterModal() {
+  document.getElementById("registerModal").style.display = "none";
+}
+
+
+let passInput = document.getElementById("loginPassword");
 let passEye = document.getElementById("eye-img");
+let NewPasswordEyeImg = document.getElementById("new-eye-img")
+let NewPasswordInp = document.getElementById("NewPasswordInput")
 
 function passwrodTypeChnge() {
-  if (passInput.type === "password") {
+  if (passInput.type === "password" || NewPasswordInp.type === "password") {
     passInput.type = "text";
+    NewPasswordInp.type = "text"
     passEye.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
+    NewPasswordEyeImg.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
   } else {
     passInput.type = "password";
     passEye.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
+    NewPasswordInp.type = "password"
+    NewPasswordEyeImg.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
   }
 };
+
+
+
+
+class Person {
+  fullName
+  email
+  password
+  constructor(fullName, email, password) {
+    this.fullName = fullName,
+      this.email = email,
+      this.password = password
+  }
+}
+function resgisterUser(event) {
+  event.preventDefault();
+  let form = document.getElementById("registerForm");
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+
+  let fullName = document.getElementById("fullName");
+  let email = document.getElementById("email");
+  let password = document.getElementById("NewPasswordInput");
+  let usersFromStorage = JSON.parse(localStorage.getItem("users")) || [];
+  let para = document.getElementById("para")
+  let savedUser = usersFromStorage.find((element) => element.email === email.value)
+
+  if (savedUser?.email) {
+    para.innerHTML = "This user is already registered"
+    fullName.value = "";
+    email.value = "";
+    password.value = "";
+  } else {
+
+    let newUser = new Person(fullName.value, email.value, password.value)
+    usersFromStorage.push(newUser);
+    localStorage.setItem("users", JSON.stringify(usersFromStorage));
+    fullName.style.display = "none"
+    email.style.display = "none"
+    password.style.display = "none"
+    let hideEye = document.getElementById("toggle-eye");
+    hideEye.style.display = "none"
+    let rigisterHeading = document.getElementById("register-h2");
+    rigisterHeading.innerHTML = "Welcome to OLX"
+    let registerBtn = document.getElementById("register-btn");
+    registerBtn.innerHTML = "Login your Account";
+    registerBtn.onclick = function () {
+      openLoginModal();
+      closeRegisterModal();
+    }
+  }
+
+}
+
+
+function loginUser(event) {
+  event.preventDefault();
+  let email = document.getElementById("loginEmail");
+  let password = document.getElementById("loginPassword");
+  let usersFromStorage = JSON.parse(localStorage.getItem("users"));
+  let savedUser = usersFromStorage.find((element) => element.email === email.value);
+  if (savedUser?.email === email.value && savedUser?.password === password.value) {
+    email.value = "";
+    password.value = "";
+    email.style.display = "none"
+    password.style.display = "none"
+    let loginText = document.getElementById("login-text")
+    let eyeIcon = document.getElementById("eye-img")
+    let backBtn = document.getElementById("login-btn")
+    let lastPara = document.getElementById("last-para-login")
+
+    backBtn.innerHTML = "Back to Home";
+    backBtn.onclick = function () {
+      document.getElementById("loginModal").style.display = "none";
+    };
+    loginText.innerHTML = "Login Succesfull"
+    localStorage.setItem("loggedinUser", JSON.stringify(savedUser))
+    loginText.style.textAlign = "center"
+    eyeIcon.style.display = "none"
+    lastPara.style.display = "none"
+    let loginbtn = document.getElementById("login-word");
+    loginbtn.style.display = "none";
+    let dropDown = document.getElementById("profile-dropdown");
+    dropDown.style.display = "block"
+    let userName = document.getElementById("userName");
+    let userEmail = document.getElementById("userEmail");
+    userName.innerHTML = savedUser.fullName
+    userEmail.innerHTML = savedUser.email
+  } else {
+    let invailedPara = document.getElementById("invailed-para");
+    invailedPara.style.display = "block"
+    invailedPara.innerHTML = "Invalid credientials."
+  }
+}
+
+
+
+function logoutUser() {
+  localStorage.removeItem("loggedinUser")
+  console.log("logout Clicked")
+  let dropDown = document.getElementById("profile-dropdown");
+  dropDown.style.display = "none"
+  let loginbtn = document.getElementById("login-word");
+  loginbtn.style.display = "block";
+  loginbtn.style.height = "50px"
+  loginbtn.style.width = "70px"
+  loginbtn.style.display = "flex"
+  loginbtn.style.justifyContent = "center"
+  loginbtn.style.alignItems = "center"
+
+
+
+  let loginText = document.getElementById("login-text");
+  loginText.style.marginBottom = "20px"
+  loginText.innerHTML = "Login";
+  loginText.style.textAlign = "left";
+
+  let eyeIcon = document.getElementById("eye-img");
+  eyeIcon.style.display = "block";
+
+  let lastPara = document.getElementById("last-para-login");
+  lastPara.style.display = "block";
+
+  let email = document.getElementById("loginEmail");
+  let password = document.getElementById("loginPassword");
+  email.style.margin = "0px"
+  password.style.margin = "0px"
+  email.style.display = "block";
+  password.style.display = "block";
+  email.value = "";
+  password.value = "";
+
+  let backBtn = document.getElementById("login-btn");
+  backBtn.innerHTML = "Login";
+  backBtn.onclick = loginUser;
+
+  let invailedPara = document.getElementById("invailed-para");
+  invailedPara.style.display = "none";
+
+  loginbtn.onclick = function () {
+    document.getElementById("loginModal").style.display = "block";
+  }
+
+}
