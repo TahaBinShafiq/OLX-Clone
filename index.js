@@ -61,7 +61,14 @@ getData();
 
 function openLoginModal() {
   document.getElementById("loginModal").style.display = "block";
-  loginUser();
+  let loginbtn = document.getElementById("login-btn")
+  loginbtn.onclick = function () {
+    loginUser();
+    let email = document.getElementById("loginEmail");
+    let password = document.getElementById("loginPassword");
+    email.value = "";
+    password.value = "";
+  }
 }
 
 function closeLoginModal() {
@@ -72,6 +79,29 @@ function closeLoginModal() {
 function openRegisterModal() {
   closeLoginModal();
   document.getElementById("registerModal").style.display = "block";
+  document.getElementById("loginModal").style.display = "none";
+
+  // Reset form and text
+  let fullName = document.getElementById("fullName");
+  let email = document.getElementById("email");
+  let password = document.getElementById("NewPasswordInput");
+  let hideEye = document.getElementById("toggle-eye");
+  let rigisterHeading = document.getElementById("register-h2");
+  let registerBtn = document.getElementById("register-btn");
+  let para = document.getElementById("para");
+
+  fullName.style.margin = "0px"
+  email.style.margin = "0px"
+  password.style.margin = "0px"
+  fullName.style.display = "block";
+  email.style.display = "block";
+  password.style.display = "block";
+  hideEye.style.display = "block";
+  rigisterHeading.innerHTML = "Create an account";
+  registerBtn.innerHTML = "Register";
+  registerBtn.style.marginTop = "10px"
+  registerBtn.onclick = resgisterUser; // ✅ back to original register function
+  para.innerHTML = ""; // ❌ clear old message
 }
 
 function closeRegisterModal() {
@@ -120,7 +150,6 @@ function resgisterUser(event) {
     return;
   }
 
-
   let fullName = document.getElementById("fullName");
   let email = document.getElementById("email");
   let password = document.getElementById("NewPasswordInput");
@@ -137,6 +166,10 @@ function resgisterUser(event) {
 
     let newUser = new Person(fullName.value, email.value, password.value)
     usersFromStorage.push(newUser);
+    fullName.value = "";
+    email.value = "";
+    password.value = "";
+    para.innerHTML = ""
     localStorage.setItem("users", JSON.stringify(usersFromStorage));
     fullName.style.display = "none"
     email.style.display = "none"
@@ -150,6 +183,13 @@ function resgisterUser(event) {
     registerBtn.onclick = function () {
       openLoginModal();
       closeRegisterModal();
+      let creatAccount = document.getElementById("creat-account")
+      creatAccount.onclick = function () {
+        openRegisterModal();
+        closeLoginModal;
+      }
+      let invailedPara = document.getElementById("invailed-para");
+      invailedPara.style.display = "none"
     }
   }
 
@@ -157,10 +197,10 @@ function resgisterUser(event) {
 
 
 function loginUser(event) {
-  event.preventDefault();
+  // event.preventDefault();
   let email = document.getElementById("loginEmail");
   let password = document.getElementById("loginPassword");
-  let usersFromStorage = JSON.parse(localStorage.getItem("users"));
+  let usersFromStorage = JSON.parse(localStorage.getItem("users")) || [];
   let savedUser = usersFromStorage.find((element) => element.email === email.value);
   if (savedUser?.email === email.value && savedUser?.password === password.value) {
     email.value = "";
@@ -187,6 +227,8 @@ function loginUser(event) {
     dropDown.style.display = "block"
     let userName = document.getElementById("userName");
     let userEmail = document.getElementById("userEmail");
+    let invailedPara = document.getElementById("invailed-para");
+    invailedPara.style.display = "none"
     userName.innerHTML = savedUser.fullName
     userEmail.innerHTML = savedUser.email
   } else {
