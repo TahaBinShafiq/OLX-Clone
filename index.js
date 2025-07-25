@@ -61,6 +61,7 @@ getData();
 
 function openLoginModal() {
   document.getElementById("loginModal").style.display = "block";
+  loginUser();
 }
 
 function closeLoginModal() {
