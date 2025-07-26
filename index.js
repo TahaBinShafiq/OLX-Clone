@@ -28,7 +28,7 @@ async function getData() {
   <div class="info">
     <div class="cat">${category}</div>
     <h2 class="title">${title}</h2>
-    <p class="desc">${description}}</p>
+   
     <div class="feats">
       <span class="feat">Width ${width}</span>
       <span class="feat">Height ${height}</span>
@@ -81,7 +81,6 @@ function openRegisterModal() {
   document.getElementById("registerModal").style.display = "block";
   document.getElementById("loginModal").style.display = "none";
 
-  // Reset form and text
   let fullName = document.getElementById("fullName");
   let email = document.getElementById("email");
   let password = document.getElementById("NewPasswordInput");
@@ -100,8 +99,8 @@ function openRegisterModal() {
   rigisterHeading.innerHTML = "Create an account";
   registerBtn.innerHTML = "Register";
   registerBtn.style.marginTop = "10px"
-  registerBtn.onclick = resgisterUser; // ✅ back to original register function
-  para.innerHTML = ""; // ❌ clear old message
+  registerBtn.onclick = resgisterUser;
+  para.innerHTML = "";
 }
 
 function closeRegisterModal() {
@@ -171,26 +170,17 @@ function resgisterUser(event) {
     password.value = "";
     para.innerHTML = ""
     localStorage.setItem("users", JSON.stringify(usersFromStorage));
-    fullName.style.display = "none"
-    email.style.display = "none"
-    password.style.display = "none"
-    let hideEye = document.getElementById("toggle-eye");
-    hideEye.style.display = "none"
-    let rigisterHeading = document.getElementById("register-h2");
-    rigisterHeading.innerHTML = "Welcome to OLX"
-    let registerBtn = document.getElementById("register-btn");
-    registerBtn.innerHTML = "Login your Account";
-    registerBtn.onclick = function () {
-      openLoginModal();
-      closeRegisterModal();
-      let creatAccount = document.getElementById("creat-account")
-      creatAccount.onclick = function () {
-        openRegisterModal();
-        closeLoginModal;
+    closeRegisterModal();
+    Swal.fire({
+      title: "Your account has been registered.",
+      icon: "success",
+      confirmButtonText: "Login Now",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        openLoginModal();
+        closeRegisterModal();
       }
-      let invailedPara = document.getElementById("invailed-para");
-      invailedPara.style.display = "none"
-    }
+    });
   }
 
 }
@@ -207,35 +197,37 @@ function loginUser(event) {
     password.value = "";
     email.style.display = "none"
     password.style.display = "none"
-    let loginText = document.getElementById("login-text")
-    let eyeIcon = document.getElementById("eye-img")
-    let backBtn = document.getElementById("login-btn")
-    let lastPara = document.getElementById("last-para-login")
 
-    backBtn.innerHTML = "Back to Home";
-    backBtn.onclick = function () {
-      document.getElementById("loginModal").style.display = "none";
-    };
-    loginText.innerHTML = "Login Succesfull"
-    localStorage.setItem("loggedinUser", JSON.stringify(savedUser))
-    loginText.style.textAlign = "center"
-    eyeIcon.style.display = "none"
-    lastPara.style.display = "none"
-    let loginbtn = document.getElementById("login-word");
-    loginbtn.style.display = "none";
-    let dropDown = document.getElementById("profile-dropdown");
-    dropDown.style.display = "block"
+    document.getElementById("loginModal").style.display = "none";
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Login Success Fully",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
     let userName = document.getElementById("userName");
     let userEmail = document.getElementById("userEmail");
-    let invailedPara = document.getElementById("invailed-para");
-    invailedPara.style.display = "none"
+
+
     userName.innerHTML = savedUser.fullName
     userEmail.innerHTML = savedUser.email
+
+    localStorage.setItem("loggedinUser", JSON.stringify(savedUser))
+
+    let loginbtn = document.getElementById("login-word");
+    loginbtn.style.display = "none";
+
+    let profileSvg = document.getElementById("profile-icon");
+    profileSvg.style.display = "none";
+
   } else {
     let invailedPara = document.getElementById("invailed-para");
     invailedPara.style.display = "block"
     invailedPara.innerHTML = "Invalid credientials."
   }
+  checkLoggedInUser()
 }
 
 
@@ -285,5 +277,33 @@ function logoutUser() {
   loginbtn.onclick = function () {
     document.getElementById("loginModal").style.display = "block";
   }
-
+  location.reload();
 }
+
+function checkLoggedInUser() {
+  console.log("Checking logged in user...");
+  const loggedUser = JSON.parse(localStorage.getItem("loggedinUser"));
+  const userDetails = document.getElementById("profile-dropdown");
+  let loginbtn = document.getElementById("login-word");
+  if (loggedUser) {
+    document.getElementById("profile-icon").style.display = "none";
+    loginbtn.style.display = "none"
+    userDetails.style.display = "block"
+    let userName = document.getElementById("userName");
+    let userEmail = document.getElementById("userEmail");
+    userName.innerHTML = loggedUser.fullName
+    userEmail.innerHTML = loggedUser.email
+  } else {
+    userDetails.style.display = "none"
+    loginbtn.style.display = "block"
+    loginbtn.style.display = "block";
+    loginbtn.style.height = "50px"
+    loginbtn.style.width = "70px"
+    loginbtn.style.display = "flex"
+    loginbtn.style.justifyContent = "center"
+    loginbtn.style.alignItems = "center"
+
+  }
+}
+
+checkLoggedInUser();
