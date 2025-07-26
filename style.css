@@ -1059,10 +1059,6 @@ h1 {
     }
 
 
-    .navbar-nav {
-        width: auto;
-    }
-
 
     header {
         border-bottom: 1px solid gainsboro;
@@ -1186,6 +1182,7 @@ h1 {
         width: 100%;
         display: flex;
         justify-content: center;
+        padding-left: 18px;
         align-items: center;
     }
 
@@ -1483,6 +1480,7 @@ h1 {
 
     .svg {
         gap: 5px;
+        justify-content: space-between !important;
     }
 
     /* .media-profile{
