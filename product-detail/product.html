@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olx Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="same__color">
+        <div class="small__navbar">
+            <div style="display: flex; align-items: center;">
+                <div class="small__navbar_logo">
+                    <svg height="20" viewBox="0 0 36.289 20.768" alt="Logo">
+                        <path
+                            d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="actions-links">
+                    <a href="" class="motor-a">
+                        <img src="https://www.olx.com.pk/assets/iconMotors.6bf280165e43e55b173d0a53551e2bfb.png" alt=""
+                            height="30px" width="70px">
+                        <span class="motor-span">Motor</span>
+                    </a>
+                    <a href="" class="motor-a">
+                        <img src="https://www.olx.com.pk/assets/iconProperty.d09c6d2e3621f900c17c9e8330a1a37b.png"
+                            alt="" height="30px" width="40px">
+                        <span class="motor-span">Property</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 0px; align-items: center;">
+                <div class="circle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                        viewBox="0 0 1024 1024">
+                        <path
+                            d="M469.333 171.119c-164.693 0-298.667 134.684-298.667 300.25v359.529l108.907-54.753 19.093-4.525h256c164.693 0 298.667-134.684 298.667-300.25s-133.973-300.25-298.667-300.25h-85.333zM147.093 938.667l-61.76-38.368v-428.929c0-212.856 172.267-386.036 384-386.036h85.333c211.733 0 384 173.18 384 386.036s-172.267 386.036-384 386.036h-245.931l-161.643 81.261z" />
+                    </svg></div>
+                <div class="circle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 1024 1024">
+                        <path
+                            d="M730.855 763.955h-435.559c-0.833-87.945-2.676-279.627-2.676-289.496 0-119.351 98.911-216.463 220.498-216.463s220.455 97.112 220.455 216.463c0 10-1.843 201.594-2.72 289.496v0zM819.282 748.603c0.92-93.341 2.062-266.38 2.062-274.144 0-141.589-98.692-260.545-231.64-294.319 2.192-7.237 3.684-14.782 3.684-22.765 0-44.345-35.969-80.27-80.27-80.27-44.345 0-80.27 35.923-80.27 80.27 0 7.983 1.491 15.483 3.684 22.765-132.948 33.731-231.64 152.687-231.64 294.319 0 7.721 1.14 182.339 2.019 276.030l-90.27 36.581 0.92 64.609h316.032c3.729 40.881 37.679 73.031 79.523 73.031s75.794-32.151 79.523-73.031h312.962l1.754-64.523-88.078-38.556z" />
+                    </svg>
+                </div>
+                <div class="circle-icon">
+                    <svg width="24" height="24" fill="none" viewBox="2 2 20 20">
+                        <path fill="currentColor"
+                            d="M18.11 14.92H9.6a2.54 2.54 0 0 1-1.58-.55 2.4 2.4 0 0 1-.87-1.4L5.47 4.87H2.83a.84.84 0 0 1-.59-.24.8.8 0 0 1-.24-.57.8.8 0 0 1 .24-.56.84.84 0 0 1 .6-.24h3.31a.85.85 0 0 1 .54.18.8.8 0 0 1 .3.46l1.79 8.77a.8.8 0 0 0 .3.47c.15.12.34.18.53.18h8.5a.85.85 0 0 0 .53-.18.8.8 0 0 0 .3-.46l1.34-6.03a.78.78 0 0 0-.17-.68.85.85 0 0 0-.66-.3h-8.31a.84.84 0 0 1-.59-.23.8.8 0 0 1-.24-.57.8.8 0 0 1 .24-.57.84.84 0 0 1 .59-.23h8.31a2.56 2.56 0 0 1 1.1.21c.34.16.64.38.88.66a2.34 2.34 0 0 1 .51 2.05l-1.35 6.04a2.4 2.4 0 0 1-.89 1.38 2.55 2.55 0 0 1-1.59.52zm-8.2 5.83a2.08 2.08 0 1 1 0-4.17 2.08 2.08 0 0 1 0 4.17zm7.5 0a2.08 2.08 0 1 1 0-4.17 2.08 2.08 0 0 1 0 4.17z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="sell-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="104" height="48" viewBox="0 0 1603 768"
+                            class="_3V9PS">
+                            <path class="_2bClX _12yOz"
+                                d="M434.442 16.944h718.82c202.72 0 367.057 164.337 367.057 367.058s-164.337 367.057-367.057 367.057h-718.82c-202.721 0-367.058-164.337-367.058-367.058S231.721 16.943 434.442 16.943z"
+                                fill="#fff" />
+                            <path class="_2bClX _YBz-"
+                                d="M427.241 669.489c-80.917 0-158.59-25.926-218.705-73.004l-.016-.014C139.407 542.352 99.766 464.914 99.766 383.997c0-41.07 9.776-80.712 29.081-117.797 25.058-48.139 64.933-89.278 115.333-118.966l-52.379-67.581c-64.73 38.122-115.955 90.98-148.159 152.845C18.8 280.243 6.201 331.224 6.201 383.997c0 104.027 50.962 203.61 139.799 273.175h.016c77.312 60.535 177.193 93.887 281.22 93.887h299.699l25.138-40.783-25.138-40.783H427.237z"
+                                fill="#ffce32" />
+                            <path class="_2bClX _3uYj7"
+                                d="M1318.522 38.596c-45.72-14.369-93.752-21.658-142.762-21.658H427.249c-84.346 0-165.764 21.683-235.441 62.713l3.118 51.726 49.245 15.865c54.16-31.895 117.452-48.739 183.073-48.739h748.511c38.159 0 75.52 5.657 111.029 16.829 44.91 14.111 86.594 37.205 120.526 66.792l66.163-57.68c-43.616-38.01-97.197-67.703-154.957-85.852z"
+                                fill="#23e5db" />
+                            <path class="_2bClX BfroU"
+                                d="M1473.479 124.453l-55.855 9.91-10.307 47.76c61.844 53.929 95.92 125.617 95.92 201.88a251.85 251.85 0 01-11.214 74.363c-38.348 124.311-168.398 211.129-316.262 211.129H726.949l25.121 40.783-25.121 40.783h448.812c190.107 0 357.303-111.638 406.613-271.498a323.69 323.69 0 0014.423-95.559c0-98.044-43.805-190.216-123.317-259.551z"
+                                fill="#3a77ff" />
+                        </svg>
+                        <div class="sell-plus-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" width="16" height="16"
+                                viewBox="0 0 1024 1024" fill="#002f34">
+                                <path
+                                    d="M414.898 123.739v291.218H123.68l-97.014 97.014 97.014 97.131h291.218v291.16l97.073 97.071 97.073-97.071v-291.16h291.16l97.131-97.131-97.131-97.014h-291.16V123.739l-97.073-97.073z" />
+                            </svg>
+                        </div>
+
+                        <div class="sell-span">
+                            <span>SELL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second__navbar">
+            <div class="second-navbar__logo">
+            </div>
+            <div class="select_option">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Jamshed Town, Karachi">
+            </div>
+            <div class="search__bar">
+                <input type="text" placeholder="Find Cars, Mobile Phones and more...">
+                <i class="fa-solid fa-search"> <Span style="color: white; font-weight: 600;">Search</Span></i>
+            </div>
+        </div>
+    </div>
+    <div style="max-width: 1250px; margin: 0px auto;">
+        <div class="third__navbar">
+            <div class="select__itself">
+                <a href="">All category <i class="fa-solid fa-angle-down"></i></a>
+            </div>
+            <div class="links">
+                <a href="#">Mobile Phones</a>
+                <a href="#">Cars</a>
+                <a href="#">Motercycles</a>
+                <a href="#">House</a>
+                <a href="#">TV - Video - Audio</a>
+                <a href="#">Tablets</a>
+                <a href="#">Land & Plots</a>
+            </div>
+        </div>
+        <div style="display: flex; justify-content:center; margin-top: 20px;  margin-bottom: 20px;">
+            <img src="https://tpc.googlesyndication.com/simgad/17215782195625663524" alt="" height="100px" width="70%">
+        </div>
+        <div class="productDetails">
+            <div class="left__side" id="left-side">
+
+
+                <div class="description">
+                    <h1>Description</h1>
+                    <p id="description">Suzuki bolan 2011 model 032l269l904</p>
+                </div>
+            </div>
+            <div class="right__side">
+                <div class="profile_contact_card">
+                    <div class="avaar">
+                        <div
+                            style="height: 55px; width: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                            <img src="https://www.olx.com.pk/assets/iconProfilePicture_noinline.6327fd8895807f09fafb0ad1e3d99b83.svg"
+                                id="image" alt="" height="60px" width="60px">
+                        </div>
+                        <div>
+                            <div>
+                                <p style="margin: 0px; font-size: small; color: gray;">Posted by</p>
+                                <h6>Jhon Smith</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 100%; border: 1px solid rgb(174, 174, 174); margin-top: 10px;"></div>
+
+
+                    <div style="display: flex; align-items: center; justify-content: space-between;" class="profile-id">
+                        <div style="display: flex; justify-content: start; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none"
+                                    viewBox="0 0 30 30" class="_341464fd">
+                                    <path fill="#EBF1FF" fill-opacity=".61"
+                                        d="M30 15a15 15 0 1 0-30 0 15 15 0 0 0 30 0z">
+                                    </path>
+                                    <path fill="#CEDDFF"
+                                        d="M12.5 9.38h-1.88a2.5 2.5 0 0 0-2.5 2.5v1.24H10v-1.24a2.5 2.5 0 0 1 2.5-2.5z">
+                                    </path>
+                                    <path fill="#3A77FF"
+                                        d="M19.38 8.75h-.63v-.63a.63.63 0 1 0-1.25 0v.63h-5v-.63a.63.63 0 1 0-1.25 0v.63h-.63a3.13 3.13 0 0 0-3.12 3.13v7.5a3.13 3.13 0 0 0 3.13 3.12h3.02a.63.63 0 0 0 0-1.25h-3.02a1.88 1.88 0 0 1-1.88-1.88v-5.62h13.13c.34 0 .62-.28.62-.63v-1.24a3.13 3.13 0 0 0-3.13-3.13zm1.87 3.75H8.75v-.63c0-1.03.84-1.87 1.88-1.87h.62v.63a.63.63 0 1 0 1.25 0V10h5v.63a.63.63 0 1 0 1.25 0V10h.63c1.03 0 1.87.84 1.87 1.88v.62z">
+                                    </path>
+                                    <path fill="#3A77FF"
+                                        d="M10.63 16.25a.63.63 0 1 0 0-1.25.63.63 0 0 0 0 1.25zm2.5 0a.63.63 0 1 0 0-1.25.63.63 0 0 0 0 1.25zm-2.5 2.5a.63.63 0 1 0 0-1.25.63.63 0 0 0 0 1.25zm2.5 0a.63.63 0 1 0 0-1.25.63.63 0 0 0 0 1.25z">
+                                    </path>
+                                    <path fill="#17284E"
+                                        d="M19.13 14.75a4.38 4.38 0 0 0-4.38 4.38 4.38 4.38 0 0 0 4.38 4.37 4.38 4.38 0 0 0 4.37-4.38 4.38 4.38 0 0 0-4.38-4.37zm0 7.5A3.13 3.13 0 0 1 16 19.12 3.13 3.13 0 0 1 19.13 16a3.13 3.13 0 0 1 3.12 3.13 3.13 3.13 0 0 1-3.13 3.12z">
+                                    </path>
+                                    <path fill="#17284E"
+                                        d="M20.38 18.5h-.63v-.63a.63.63 0 1 0-1.25 0v1.25c0 .35.28.63.63.63h1.25a.63.63 0 1 0 0-1.25z">
+                                    </path>
+                                </svg>
+                                <div>
+                                    <p style="margin: 0px; font-size: small; color: gray;">Member Since</p>
+                                    <h6 style="font-weight: 700;">2021</h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none"
+                                    viewBox="0 0 30 30" class="_341464fd">
+                                    <path fill="#EBF1FF" fill-opacity=".61"
+                                        d="M15 30a15 15 0 1 0 0-30 15 15 0 0 0 0 30z">
+                                    </path>
+                                    <path fill="#3A77FF" fill-rule="evenodd"
+                                        d="M17.67 20.35H10a1.5 1.5 0 0 1-1.5-1.5V9.5a1.5 1.5 0 0 1 1.5-1.5h7.67a1.5 1.5 0 0 1 1.5 1.5v9.34a1.5 1.5 0 0 1-1.5 1.5zm0-1a.5.5 0 0 0 .5-.5V9.5a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v9.34a.5.5 0 0 0 .5.5h7.67z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="#3A77FF" fill-rule="evenodd"
+                                        d="M11.5 13.18a.5.5 0 0 1-1 0v-1.67a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5v1.67a.5.5 0 0 1-1 0v-1.67a.5.5 0 0 0-.5-.5.5.5 0 0 0-.5.5v1.67zm2.66 0v-2.67a.5.5 0 0 1 .5-.5h1a1.5 1.5 0 0 1 1.5 1.5v.67a1.5 1.5 0 0 1-1.5 1.5h-1a.5.5 0 0 1-.5-.5zm1-.5h.5a.5.5 0 0 0 .5-.5v-.67a.5.5 0 0 0-.5-.5h-.5v1.67z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="#3A77FF" fill-rule="evenodd"
+                                        d="M13 11.68a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1h2zm-2 4.33a.5.5 0 0 1 0-1h2.67a.5.5 0 0 1 0 1H11zm0 1.67a.5.5 0 0 1 0-1h4.67a.5.5 0 0 1 0 1H11z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="#17284E" fill-rule="evenodd"
+                                        d="M20 22.35h-7.66a1.5 1.5 0 0 1-1.5-1.5v-1a.5.5 0 0 1 .5-.5H18a.17.17 0 0 0 .17-.17v-8.67a.5.5 0 0 1 .5-.5H20a1.5 1.5 0 0 1 1.5 1.5v9.34a1.5 1.5 0 0 1-1.5 1.5zm0-1a.5.5 0 0 0 .5-.5V11.5a.5.5 0 0 0-.5-.5h-.83v8.17c0 .65-.52 1.17-1.17 1.17h-6.16v.5a.5.5 0 0 0 .5.5H20z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div>
+                                    <p style="margin: 0px; font-size: small; color: gray;">Active Ads</p>
+                                    <h6 style="font-weight: 700;">1</h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-btn">
+                    <svg width="26" height="26" viewBox="0 0 1024 1024" class="ce29fa27">
+                        <path
+                            d="M784.55 852.4c-331.43-14.64-598.31-281.52-612.94-612.95l149.97-60 91.69 183.43-71 35.5v26.45c0 141.66 115.25 256.9 256.9 256.9h26.45l11.86-23.64 23.68-47.36 183.38 91.74-59.99 149.93zM918.1 643.45L661.16 514.99l-57.47 19.2-30.04 60.03c-74.07-11.1-132.73-69.8-143.87-143.87l60.08-30.04L509 362.88 380.6 105.94l-54.2-20.6-214.18 85.63-26.88 39.8c0 401.37 326.57 727.9 727.94 727.9l39.76-26.88 85.64-214.19-20.61-54.19z">
+                        </path>
+                    </svg>
+                    <p>Show phone number</p>
+                </div>
+                <div class="phone-btn-2" style="margin-top: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"
+                        class="_3d8cad58">
+                        <path
+                            d="M469.33 171.12c-164.69 0-298.66 134.68-298.66 300.25V830.9l108.9-54.75 19.1-4.53h256c164.69 0 298.66-134.68 298.66-300.25S719.36 171.12 554.67 171.12h-85.34zM147.1 938.67L85.33 900.3V471.37c0-212.86 172.27-386.04 384-386.04h85.34c211.73 0 384 173.18 384 386.04s-172.27 386.04-384 386.04H308.74l-161.65 81.26z">
+                        </path>
+                    </svg>
+                    <p>Chat</p>
+                </div>
+                <div id="discription-cont"></div>
+            </div>
+        </div>
+
+        <footer>
+
+            <div style="max-width: 1300px; margin: 0px auto;">
+                <div class="last-sec">
+                    <div style="margin-right: 30px;"><img
+                            src="https://www.olx.com.pk/assets/olx-mobile-app.dfa5b83f01c6e269aca19a3faff716a6.webp"
+                            alt="" height="200px">
+                    </div>
+                    <div class="stick"></div>
+                    <div>
+
+                        <div>
+                            <div>
+                                <p class="last-para">GET YOUR APP TODAY</p>
+                            </div>
+
+                            <div style="display: flex; gap: 10px;">
+                                <div><img
+                                        src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg"
+                                        alt="App Store" class="_5c24a9de" height="40px"></div>
+                                <div><img
+                                        src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg"
+                                        alt="App Store" class="_5c24a9de" height="40px"></div>
+                                <div><img
+                                        src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg"
+                                        alt="App Store" class="_5c24a9de" height="40px"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <!-- footer  -->
+
+    <div class="footer-sec">
+
+        <div>
+            <p><strong>Popular Categories</strong></p>
+            <p>Cars</p>
+            <p>Flats for rent</p>
+            <p>Mobile Phones</p>
+            <p>Jobs</p>
+        </div>
+        <div>
+            <p><strong>Trending Searches</strong></p>
+            <p>Bikes</p>
+            <p>Watches</p>
+            <p>Books</p>
+            <p>Dogs</p>
+        </div>
+        <div>
+            <p><strong>About Us</strong></p>
+            <p>About Dubizzle Group</p>
+            <p>OLX Blog</p>
+            <p>Contact Us</p>
+            <p>OLX for Businesses</p>
+        </div>
+        <div>
+            <p><strong>olx</strong></p>
+            <p>Help</p>
+            <p>Sitemap</p>
+            <p>Terms of use</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div>
+            <p><strong>FOLLOW US</strong></p>
+            <div>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M39.5 20a19.5 19.5 0 1 0-39 0 19.5 19.5 0 0 0 39 0z" stroke="currentColor"
+                        stroke-linejoin="bevel"></path>
+                    <path
+                        d="M24.54 14h2.25l-4.9 5.61 5.77 7.64h-4.52l-3.55-4.63-4.05 4.63h-2.25l5.25-6L13 14h4.64l3.2 4.23 3.7-4.23zm-.78 11.9H25l-8.04-10.62h-1.34l8.13 10.63z"
+                        fill="currentColor"></path>
+                </svg>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M39.5 20a19.5 19.5 0 1 0-39 0 19.5 19.5 0 0 0 39 0z" stroke="currentColor"
+                        stroke-linejoin="bevel"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M20 11.67a8.36 8.36 0 0 0-8.33 8.38 8.37 8.37 0 0 0 7.03 8.28v-5.86h-2.12v-2.42h2.12V18.2c0-2.1 1.24-3.26 3.15-3.26.9 0 1.86.17 1.86.17v2.06h-1.05c-1.04 0-1.36.65-1.36 1.3v1.58h2.31l-.37 2.42H21.3v5.86a8.37 8.37 0 0 0 7.03-8.28A8.36 8.36 0 0 0 20 11.67z"
+                        fill="currentColor"></path>
+                </svg>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M39.5 20a19.5 19.5 0 1 0-39 0 19.5 19.5 0 0 0 39 0z" stroke="currentColor"
+                        stroke-linejoin="bevel"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M18.5 22.76v-5.1l4.48 2.55-4.49 2.55zm9.97-6.7a2.16 2.16 0 0 0-1.52-1.53c-1.33-.36-6.7-.36-6.7-.36s-5.37 0-6.7.36a2.16 2.16 0 0 0-1.53 1.52c-.35 1.35-.35 4.16-.35 4.16s0 2.81.35 4.16c.2.74.78 1.33 1.52 1.53 1.34.36 6.7.36 6.7.36s5.38 0 6.71-.36c.74-.2 1.32-.79 1.52-1.53.36-1.35.36-4.16.36-4.16s0-2.8-.36-4.16z"
+                        fill="currentColor"></path>
+                </svg>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M39.5 20a19.5 19.5 0 1 0-39 0 19.5 19.5 0 0 0 39 0z" stroke="currentColor"
+                        stroke-linejoin="bevel"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M24.17 11.67h-8.34a4.17 4.17 0 0 0-4.16 4.16v8.34a4.17 4.17 0 0 0 4.16 4.16h8.34a4.17 4.17 0 0 0 4.16-4.16v-8.34c0-2.3-1.86-4.16-4.16-4.16zm0 1.66a2.5 2.5 0 0 1 2.5 2.5v8.34a2.5 2.5 0 0 1-2.5 2.5h-8.34a2.5 2.5 0 0 1-2.5-2.5v-8.34a2.5 2.5 0 0 1 2.5-2.5h8.34zM20 15.83a4.17 4.17 0 1 0 0 8.34 4.17 4.17 0 0 0 0-8.34zm0 1.67a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm4.45-1.12a.83.83 0 1 0 0-1.66.83.83 0 0 0 0 1.66z"
+                        fill="currentColor"></path>
+                </svg>
+
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 40px;" class="footer-last-items">
+                <div><img
+                        src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg"
+                        alt="App Store" class="_5c24a9de" height="30px"></div>
+                <div><img
+                        src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg"
+                        alt="App Store" class="_5c24a9de" height="30px"></div>
+                <div><img
+                        src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg"
+                        alt="App Store" class="_5c24a9de" height="30px"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="head">
+        <p>Design and Built by <u>Taha Bin Shafiq</u></p>
+    </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

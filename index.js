@@ -18,7 +18,7 @@ async function getData() {
 
 
   products.map((product) => {
-    let { title, description, category, images, price, availabilityStatus, stock } = product;
+    let { title, description, category, images, price, availabilityStatus, stock, id } = product;
     let { width, height, depth } = product.dimensions;
     cardElement.innerHTML += ` <div class="card">
   <div class="badge">Stock ${stock}</div>
@@ -26,8 +26,10 @@ async function getData() {
     <div class="img"><img src="${images[0]}" alt="Premium Laptop"></div>
   </div>
   <div class="info">
+    <a href="./product-detail/product.html?id=${id}" class="anchor" target="_blank">
     <div class="cat">${category}</div>
     <h2 class="title">${title}</h2>
+    </a>
    
     <div class="feats">
       <span class="feat">Width ${width}</span>
