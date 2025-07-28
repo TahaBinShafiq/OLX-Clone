@@ -10,6 +10,10 @@
     outline: none;
 }
 
+.back-btn {
+    display: none;
+}
+
 b {
     color: #3a77ff;
 }
@@ -86,6 +90,8 @@ b {
     border-radius: 4px;
     cursor: pointer;
     margin-left: 35px;
+    display: flex;
+    align-items: center;
 }
 
 .second__navbar .select_option input {
@@ -374,9 +380,9 @@ b {
     height: fit-content;
     margin: 0px auto;
     /* margin-top: 50px; */
-    display: flex;
+    display: flex !important;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .left__side {
@@ -510,7 +516,7 @@ p {
 
 .sell-plus-icon {
     position: absolute;
-    top: 14px;
+    top: 11px;
     left: 25px;
 }
 
@@ -709,7 +715,208 @@ p {
     color: white;
     font-weight: 500;
     text-align: end;
-    padding-right: 20px;
+    /* padding-right: 20px; */
     padding-top: 10px;
     cursor: pointer;
+}
+
+
+
+
+.details-container {
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+    width: 500px;
+    padding-left: 10px;
+}
+
+.details-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #003333;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: fit-content;
+}
+
+.detail-item {
+    background-color: #F2F4F5;
+    padding-left: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+}
+
+.detail-item span {
+    color: #333;
+    font-size: 14px;
+    width: 35%;
+    background-color: #F2F4F5;
+}
+
+.detail-item strong {
+    font-size: 15px;
+    color: #003333;
+    width: 65%;
+    background-color: #FAFBFB;
+    height: 100%;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+
+#productDetails {
+    display: none;
+}
+
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #515151;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .same__color {
+        display: none;
+    }
+
+    .third__navbar {
+        display: none;
+    }
+
+    .img-1 {
+        display: none !important;
+    }
+
+    .productDetails {
+        flex-direction: column;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .left__side {
+        width: 100%;
+    }
+
+    .carousel-item {
+        margin: 0px !important;
+        width: 100% !important;
+    }
+
+    .details-container {
+        width: 100%;
+        font-family: Arial, sans-serif;
+        padding: 5px;
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+        width: 100%;
+    }
+
+    .detail-item {
+        width: 100%;
+    }
+
+    .right__side {
+        width: 100%;
+    }
+
+
+    .profile_contact_card {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        width: 90%;
+        height: fit-content;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid #edeaea;
+        border-radius: 6px;
+
+    }
+
+    .phone-btn,
+    .phone-btn-2 {
+        width: 90%;
+    }
+
+    .description {
+        padding: 20px !important;
+        width: 100%;
+    }
+
+    .footer-sec {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        gap: 10px;
+    }
+
+
+
+    .footer-last-items {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .head {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .head>p {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .last-sec {
+        display: none;
+    }
+
+    .back-btn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: rgb(228, 228, 228);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1999;
+    }
+
 }

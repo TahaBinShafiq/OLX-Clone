@@ -9,8 +9,18 @@ async function getProductData() {
     let data = await response.json()
     productData = data
 
+    let loader = document.getElementById("loader")
+    loader.style.display = "none";
+    let spinnerCont = document.getElementById("spinner-cont")
+    spinnerCont.style.display = "none"
+    let productDetails = document.getElementById("productDetails")
+    productDetails.style.display = "block"
+ 
 
-    let { title, images, price, shippingInformation, warrantyInformation, description } = data;
+
+    let { title, images, price, shippingInformation, warrantyInformation, description, brand, availabilityStatus,
+        weight, returnPolicy, minimumOrderQuantity, rating, stock } = data;
+    let { width, height, depth } = data.dimensions;
     console.log(title)
 
     let slider = document.getElementById("left-side")
@@ -58,6 +68,52 @@ async function getProductData() {
                 <p>${warrantyInformation}</p>
                 </div>
             </div>
+            <div class="details-container">
+  <h2>Details</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <span>Brand</span>
+      <strong>${brand}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Availability</span>
+      <strong>${availabilityStatus}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Weight</span>
+      <strong>${weight}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Return Policy</span>
+      <strong>${returnPolicy}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Order Quantity</span>
+      <strong>${minimumOrderQuantity}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Rating</span>
+    <strong>${rating}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Stock</span>
+      <strong>${stock}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Width</span>
+      <strong>${width}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Height</span>
+      <strong>${height}</strong>
+    </div>
+    <div class="detail-item">
+      <span>Depth</span>
+      <strong>${depth}</strong>
+    </div>
+  </div>
+</div>
+
 `;
 
     let discriptionContanier = document.getElementById("discription-cont");
@@ -65,7 +121,10 @@ async function getProductData() {
     discriptionContanier.innerHTML = ` <div class="description">
                 <h1>Description</h1>
                 <p id="description2">${description}</p>
-            </div>`
+            </div>
+            
+            `
+
 
 
 }

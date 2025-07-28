@@ -1340,32 +1340,32 @@ h1 {
         width: 100%;
     }
 
-    .footer-sec {
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-        gap: 10px;
-    }
-
-
-
-    .footer-last-items {
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-    .head {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .head>p {
-        margin: 0px;
-        padding: 0px;
-    }
+        .footer-sec {
+            width: 100%;
+            flex-direction: column;
+            height: auto;
+            text-align: center;
+            gap: 10px;
+        }
+    
+    
+    
+        .footer-last-items {
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+    
+        .head {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .head>p {
+            margin: 0px;
+            padding: 0px;
+        }
 
     .card {
         width: 45%;
