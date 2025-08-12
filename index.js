@@ -1,63 +1,11 @@
+import { auth } from "./config.js"
+import { createUserWithEmailAndPassword , signInWithEmailAndPassword} from "./auth.js"
+
+
+
 let cardElement = document.getElementById("cards");
 let loader = document.getElementById("main-div");
 
-// async function getData() {
-  
-
-
-//   let response = await fetch('https://dummyjson.com/products');
-//   let data = await response.json();
-//   console.log(data)
-//   let { products } = data
-
-
-//   loader.style.display = "none";
-//   cardElement.style.display = "flex";
-
-
-//   products.map((product) => {
-//     let { title, description, category, images, price, availabilityStatus, stock, id } = product;
-//     let { width, height, depth } = product.dimensions;
-//     cardElement.innerHTML += ` <div class="card">
-//   <div class="badge">Stock ${stock}</div>
-//   <div class="tilt">
-//     <div class="img"><img src="${images[0]}" alt="Premium Laptop"></div>
-//   </div>
-//   <div class="info">
-//     <a href="./product-detail/product.html?id=${id}" class="anchor" target="_blank">
-//     <div class="cat">${category}</div>
-//     <h2 class="title">${title}</h2>
-//     </a>
-   
-//     <div class="feats">
-//       <span class="feat">Width ${width}</span>
-//       <span class="feat">Height ${height}</span>
-//       <span class="feat">Depth ${depth}</span>
-//     </div>
-//     <div class="bottom">
-//       <div class="price">
-//         <span class="new">$${price}</span>
-//           <div class="stock">${availabilityStatus}</div>
-//       </div>
-//       <button class="btn-1">
-//         <span>Add to Cart</span>
-//         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-//           <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4" />
-//           <line x1="3" y1="6" x2="21" y2="6" />
-//           <path d="M16 10a4 4 0 01-8 0" />
-//         </svg>
-//       </button>
-//     </div>
-//     </div>
-//   </div>
-// </div>
-// `
-
-//   })
-
-// }
-
-// getData();
 
 function openLoginModal() {
   document.getElementById("loginModal").style.display = "block";
@@ -71,15 +19,12 @@ function openLoginModal() {
   }
 }
 
-document.getElementById("login-word").addEventListener("click" , openLoginModal)
+document.getElementById("login-word").addEventListener("click", openLoginModal)
 
 function closeLoginModal() {
   document.getElementById("loginModal").style.display = "none";
 }
-document.getElementById("closeLogin").addEventListener("click" , closeLoginModal)
-
-
-
+document.getElementById("closeLogin").addEventListener("click", closeLoginModal)
 
 function openRegisterModal() {
   closeLoginModal();
@@ -107,13 +52,11 @@ function openRegisterModal() {
   para.innerHTML = "";
 }
 
-document.getElementById("creat-account").addEventListener("click" , openRegisterModal)
-
+document.getElementById("creat-account").addEventListener("click", openRegisterModal)
 function closeRegisterModal() {
   document.getElementById("registerModal").style.display = "none";
 }
-
-document.getElementById("closeRegister").addEventListener("click" , closeRegisterModal)
+document.getElementById("closeRegister").addEventListener("click", closeRegisterModal)
 
 
 
@@ -136,82 +79,63 @@ function passwrodTypeChnge() {
   }
 };
 
-passEye.addEventListener("click" , passwrodTypeChnge)
-NewPasswordEyeImg.addEventListener("click" , passwrodTypeChnge)
+passEye.addEventListener("click", passwrodTypeChnge)
+NewPasswordEyeImg.addEventListener("click", passwrodTypeChnge)
 
 
 
-
-// class Person {
-//   fullName
-//   email
-//   password
-//   constructor(fullName, email, password) {
-//     this.fullName = fullName,
-//       this.email = email,
-//       this.password = password
-//   }
-// }
 function resgisterUser(event) {
   event.preventDefault();
   let form = document.getElementById("registerForm");
-  // if (!form.checkValidity()) {
-  //   form.reportValidity();
-  //   return;
-  // }
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
   let fullName = document.getElementById("fullName");
   let email = document.getElementById("email");
   let password = document.getElementById("NewPasswordInput");
+  createUserWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      console.log(user , "ye woh user he jo register howa he")
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+    fullName.value = ""
+    email.value = ""
+    password.value = ""
+}
 
-  
-  
+let registerBtn = document.getElementById("register-btn")
+registerBtn.addEventListener("click", resgisterUser)
+
+
+
+function loginUser() {
+  let email = document.getElementById("loginEmail");
+  let password = document.getElementById("loginPassword");
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user , "ye woh user he jo login he")
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 
 }
 
-
-// function loginUser(event) {
-//   // event.preventDefault();
-//   let email = document.getElementById("loginEmail");
-//   let password = document.getElementById("loginPassword");
-//   let usersFromStorage = JSON.parse(localStorage.getItem("users")) || [];
-//   let savedUser = usersFromStorage.find((element) => element.email === email.value);
-//   if (savedUser?.email === email.value && savedUser?.password === password.value) {
-//     email.value = "";
-//     password.value = "";
-//     email.style.display = "none"
-//     password.style.display = "none"
-
-//     document.getElementById("loginModal").style.display = "none";
-//     Swal.fire({
-//       position: "top-center",
-//       icon: "success",
-//       title: "Login Success Fully",
-//       showConfirmButton: false,
-//       timer: 1500
-//     });
-
-//     let userName = document.getElementById("userName");
-//     let userEmail = document.getElementById("userEmail");
-
-
-//     userName.innerHTML = savedUser.fullName
-//     userEmail.innerHTML = savedUser.email
-
-//     localStorage.setItem("loggedinUser", JSON.stringify(savedUser))
-
-//     let loginbtn = document.getElementById("login-word");
-//     loginbtn.style.display = "none";
-
-//     let profileSvg = document.getElementById("profile-icon");
-//     profileSvg.style.display = "none";
-
-//   } else {
-//     let invailedPara = document.getElementById("invailed-para");
-//     invailedPara.style.display = "block"
-//     invailedPara.innerHTML = "Invalid credientials."
-//   }
-//   checkLoggedInUser()
-// }
+let loginbtn = document.getElementById("login-btn")
+loginbtn.addEventListener("click" , loginUser)
 
 
 
