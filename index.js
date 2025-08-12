@@ -133,6 +133,13 @@ function loginUser() {
       // Signed in 
       const user = userCredential.user;
       console.log(user, "ye woh user he jo abhi abhi login howa he")
+      Swal.fire({
+        title: 'Login Successful!',
+        text: 'Welcome back ' + (user.displayName || 'User') + '!',
+        icon: 'success',
+        showConfirmButton: false, 
+        timer: 1500 
+      });
       document.getElementById("invailed-para").style.display = "none"
       // ...
     })
@@ -146,7 +153,7 @@ function loginUser() {
         paraElement.textContent = "Invalid Credentials";
 
       }
-      
+
     });
 
 }
