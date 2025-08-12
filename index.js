@@ -71,61 +71,73 @@ function openLoginModal() {
   }
 }
 
+document.getElementById("login-word").addEventListener("click" , openLoginModal)
+
 function closeLoginModal() {
   document.getElementById("loginModal").style.display = "none";
 }
+document.getElementById("closeLogin").addEventListener("click" , closeLoginModal)
 
 
-// function openRegisterModal() {
-//   closeLoginModal();
-//   document.getElementById("registerModal").style.display = "block";
-//   document.getElementById("loginModal").style.display = "none";
-
-//   let fullName = document.getElementById("fullName");
-//   let email = document.getElementById("email");
-//   let password = document.getElementById("NewPasswordInput");
-//   let hideEye = document.getElementById("toggle-eye");
-//   let rigisterHeading = document.getElementById("register-h2");
-//   let registerBtn = document.getElementById("register-btn");
-//   let para = document.getElementById("para");
-
-//   fullName.style.margin = "0px"
-//   email.style.margin = "0px"
-//   password.style.margin = "0px"
-//   fullName.style.display = "block";
-//   email.style.display = "block";
-//   password.style.display = "block";
-//   hideEye.style.display = "block";
-//   rigisterHeading.innerHTML = "Create an account";
-//   registerBtn.innerHTML = "Register";
-//   registerBtn.style.marginTop = "10px"
-//   registerBtn.onclick = resgisterUser;
-//   para.innerHTML = "";
-// }
-
-// function closeRegisterModal() {
-//   document.getElementById("registerModal").style.display = "none";
-// }
 
 
-// let passInput = document.getElementById("loginPassword");
-// let passEye = document.getElementById("eye-img");
-// let NewPasswordEyeImg = document.getElementById("new-eye-img")
-// let NewPasswordInp = document.getElementById("NewPasswordInput")
+function openRegisterModal() {
+  closeLoginModal();
+  document.getElementById("registerModal").style.display = "block";
+  document.getElementById("loginModal").style.display = "none";
 
-// function passwrodTypeChnge() {
-//   if (passInput.type === "password" || NewPasswordInp.type === "password") {
-//     passInput.type = "text";
-//     NewPasswordInp.type = "text"
-//     passEye.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
-//     NewPasswordEyeImg.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
-//   } else {
-//     passInput.type = "password";
-//     passEye.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
-//     NewPasswordInp.type = "password"
-//     NewPasswordEyeImg.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
-//   }
-// };
+  let fullName = document.getElementById("fullName");
+  let email = document.getElementById("email");
+  let password = document.getElementById("NewPasswordInput");
+  let hideEye = document.getElementById("toggle-eye");
+  let rigisterHeading = document.getElementById("register-h2");
+  let registerBtn = document.getElementById("register-btn");
+  let para = document.getElementById("para");
+
+  fullName.style.margin = "0px"
+  email.style.margin = "0px"
+  password.style.margin = "0px"
+  fullName.style.display = "block";
+  email.style.display = "block";
+  password.style.display = "block";
+  hideEye.style.display = "block";
+  rigisterHeading.innerHTML = "Create an account";
+  registerBtn.innerHTML = "Register";
+  registerBtn.style.marginTop = "10px"
+  para.innerHTML = "";
+}
+
+document.getElementById("creat-account").addEventListener("click" , openRegisterModal)
+
+function closeRegisterModal() {
+  document.getElementById("registerModal").style.display = "none";
+}
+
+document.getElementById("closeRegister").addEventListener("click" , closeRegisterModal)
+
+
+
+let passInput = document.getElementById("loginPassword");
+let passEye = document.getElementById("eye-img");
+let NewPasswordEyeImg = document.getElementById("new-eye-img")
+let NewPasswordInp = document.getElementById("NewPasswordInput")
+
+function passwrodTypeChnge() {
+  if (passInput.type === "password" || NewPasswordInp.type === "password") {
+    passInput.type = "text";
+    NewPasswordInp.type = "text"
+    passEye.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
+    NewPasswordEyeImg.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png";
+  } else {
+    passInput.type = "password";
+    passEye.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
+    NewPasswordInp.type = "password"
+    NewPasswordEyeImg.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
+  }
+};
+
+passEye.addEventListener("click" , passwrodTypeChnge)
+NewPasswordEyeImg.addEventListener("click" , passwrodTypeChnge)
 
 
 
@@ -140,49 +152,21 @@ function closeLoginModal() {
 //       this.password = password
 //   }
 // }
-// function resgisterUser(event) {
-//   event.preventDefault();
-//   let form = document.getElementById("registerForm");
+function resgisterUser(event) {
+  event.preventDefault();
+  let form = document.getElementById("registerForm");
+  // if (!form.checkValidity()) {
+  //   form.reportValidity();
+  //   return;
+  // }
+  let fullName = document.getElementById("fullName");
+  let email = document.getElementById("email");
+  let password = document.getElementById("NewPasswordInput");
 
-//   if (!form.checkValidity()) {
-//     form.reportValidity();
-//     return;
-//   }
+  
+  
 
-//   let fullName = document.getElementById("fullName");
-//   let email = document.getElementById("email");
-//   let password = document.getElementById("NewPasswordInput");
-//   let usersFromStorage = JSON.parse(localStorage.getItem("users")) || [];
-//   let para = document.getElementById("para")
-//   let savedUser = usersFromStorage.find((element) => element.email === email.value)
-
-//   if (savedUser?.email) {
-//     para.innerHTML = "This user is already registered"
-//     fullName.value = "";
-//     email.value = "";
-//     password.value = "";
-//   } else {
-
-//     let newUser = new Person(fullName.value, email.value, password.value)
-//     usersFromStorage.push(newUser);
-//     fullName.value = "";
-//     email.value = "";
-//     password.value = "";
-//     para.innerHTML = ""
-//     localStorage.setItem("users", JSON.stringify(usersFromStorage));
-//     closeRegisterModal();
-//     Swal.fire({
-//       title: "Your account has been registered.",
-//       icon: "success",
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         openLoginModal();
-//         closeRegisterModal();
-//       }
-//     });
-//   }
-
-// }
+}
 
 
 // function loginUser(event) {

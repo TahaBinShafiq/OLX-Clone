@@ -49,7 +49,7 @@
                 </div>
 
                 <div style="display: flex; gap: 0px; align-items: center;" class="item-2">
-                    <div class="ser-item-3" onclick="openLoginModal()" id="login-word">
+                    <div class="ser-item-3" id="login-word">
                         <span class="login-word">Login</span>
                         <div class="login-underline" id="login-underline"></div>
                     </div>
@@ -450,24 +450,24 @@
 
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <span class="close" id="closeLogin">&times;</span>
             <h2 id="login-text">Login</h2>
             <form>
                 <input class="inp" type="text" id="loginEmail" placeholder="Enter your Email" required><br>
                 <div class="password-wrapper">
                     <input class="inp" type="password" id="loginPassword" placeholder="Password" required>
-                    <span class="toggle-eye" onclick="passwrodTypeChnge()">
+                    <span class="toggle-eye" id="login-eye">
                         <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Show" class="eye-img"
                             id="eye-img">
                     </span>
                 </div>
                 <p style="margin: 0px; color: red;" id="invailed-para"></p>
                 <br>
-                <button class="btn-2" id="login-btn" type="submit" onclick="loginUser(event)">Login</button>
+                <button class="btn-2" id="login-btn" type="submit">Login</button>
             </form>
             <p style="margin-top: 10px; text-align: center;" id="last-para-login">
                 Don't have an account?
-                <a href="#" onclick="openRegisterModal()" id="creat-account">Create an Account</a>
+                <a href="#"  id="creat-account">Create an Account</a>
             </p>
         </div>
     </div>
@@ -475,7 +475,7 @@
     <!-- ✅ Register Modal -->
     <div id="registerModal" class="modal" style="display: none;">
         <div class="modal-content">
-            <span class="close" onclick="closeRegisterModal()">&times;</span>
+            <span class="close" id="closeRegister">&times;</span>
             <h2 id="register-h2">Register</h2>
             <!-- Add register form fields here -->
             <form id="registerForm">
@@ -483,12 +483,12 @@
                 <input class="inp" type="email" placeholder="Email" required id="email"><br>
                 <div class="password-wrapper">
                     <input class="inp" type="password" id="NewPasswordInput" placeholder="Password" required>
-                    <span class="toggle-eye" id="toggle-eye" onclick="passwrodTypeChnge()">
+                    <span class="toggle-eye" id="toggle-eye">
                         <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Show" class="eye-img"
                             id="new-eye-img">
                     </span>
                 </div>
-                <button class="btn-2" type="submit" onclick="resgisterUser(event)" id="register-btn">Register</button>
+                <button class="btn-2" type="submit" id="register-btn">Register</button>
                 <p id="para"></p>
             </form>
         </div>
