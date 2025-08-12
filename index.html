@@ -53,7 +53,7 @@
                         <span class="login-word">Login</span>
                         <div class="login-underline" id="login-underline"></div>
                     </div>
-                    <div class="all-icons">
+                    <div class="all-icons" id="all-icons">
                         <div class="circle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
                                 viewBox="0 0 1024 1024">
                                 <path
@@ -71,6 +71,176 @@
                                     d="M18.11 14.92H9.6a2.54 2.54 0 0 1-1.58-.55 2.4 2.4 0 0 1-.87-1.4L5.47 4.87H2.83a.84.84 0 0 1-.59-.24.8.8 0 0 1-.24-.57.8.8 0 0 1 .24-.56.84.84 0 0 1 .6-.24h3.31a.85.85 0 0 1 .54.18.8.8 0 0 1 .3.46l1.79 8.77a.8.8 0 0 0 .3.47c.15.12.34.18.53.18h8.5a.85.85 0 0 0 .53-.18.8.8 0 0 0 .3-.46l1.34-6.03a.78.78 0 0 0-.17-.68.85.85 0 0 0-.66-.3h-8.31a.84.84 0 0 1-.59-.23.8.8 0 0 1-.24-.57.8.8 0 0 1 .24-.57.84.84 0 0 1 .59-.23h8.31a2.56 2.56 0 0 1 1.1.21c.34.16.64.38.88.66a2.34 2.34 0 0 1 .51 2.05l-1.35 6.04a2.4 2.4 0 0 1-.89 1.38 2.55 2.55 0 0 1-1.59.52zm-8.2 5.83a2.08 2.08 0 1 1 0-4.17 2.08 2.08 0 0 1 0 4.17zm7.5 0a2.08 2.08 0 1 1 0-4.17 2.08 2.08 0 0 1 0 4.17z">
                                 </path>
                             </svg>
+                        </div>
+                        <div>
+                            <div class="profile-dropdown" id="profile-dropdown">
+                                <div class="container py-5 ">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <ul class="list-unstyled">
+                                                <li class="dropdown ml-2">
+
+                                                    <a class="rounded-circle " href="#" role="button" id="dropdownUser"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <div class="avatar avatar-md avatar-indicators avatar-online">
+                                                            <img alt="avatar"
+                                                                src="https://www.olx.com.pk/assets/iconProfilePicture_noinline.6327fd8895807f09fafb0ad1e3d99b83.svg"
+                                                                class="rounded-circle">
+                                                        </div>
+                                                    </a>
+
+                                                    <div class="dropdown-menu pb-2" aria-labelledby="dropdownUser">
+                                                        <div class="dropdown-item">
+                                                            <div class="d-flex py-2">
+                                                                <div
+                                                                    class="avatar avatar-md avatar-indicators avatar-online">
+                                                                    <img alt="avatar"
+                                                                        src="https://www.olx.com.pk/assets/iconProfilePicture_noinline.6327fd8895807f09fafb0ad1e3d99b83.svg"
+                                                                        class="rounded-circle">
+                                                                </div>
+                                                                <div class="ml-3 lh-1">
+                                                                    <h5 class="mb-0" id="userName"></h5>
+                                                                    <p class="mb-0" id="userEmail"></p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="dropdown-divider"></div>
+                                                        <div class="">
+                                                            <ul class="list-unstyled">
+                                                                <li class="dropdown-submenu dropright-lg">
+                                                                    <a class="dropdown-item dropdown-list-group-item dropdown-toggle"
+                                                                        href="#">
+                                                                        <span class="mr-1">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                width="12" height="12"
+                                                                                viewBox="0 0 24 24" fill="none"
+                                                                                stroke="currentColor" stroke-width="2"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                class="feather feather-circle">
+                                                                                <circle cx="12" cy="12" r="10"></circle>
+                                                                            </svg></span><span> Status
+                                                                    </a>
+                                                                    <ul class="dropdown-menu status">
+                                                                        <li>
+                                                                            <a class="dropdown-item text-success"
+                                                                                href="#!">
+                                                                                Online
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="dropdown-item text-black-50"
+                                                                                href="#!">
+                                                                                Offline
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="dropdown-item text-info"
+                                                                                href="#!">
+                                                                                Away
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="dropdown-item text-danger"
+                                                                                href="#!">
+                                                                                Busy
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+
+
+
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="@@webRoot/pages/profile-edit.html">
+                                                                        <span class="mr-1">
+
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                width="12" height="12"
+                                                                                viewBox="0 0 24 24" fill="none"
+                                                                                stroke="currentColor" stroke-width="2"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                class="feather feather-user">
+                                                                                <path
+                                                                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+                                                                                </path>
+                                                                                <circle cx="12" cy="7" r="4"></circle>
+                                                                            </svg>
+                                                                        </span>Profile
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="@@webRoot/pages/student-subscriptions.html"><span
+                                                                            class="mr-2">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                width="14" height="14"
+                                                                                viewBox="0 0 24 24" fill="none"
+                                                                                stroke="currentColor" stroke-width="2"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                class="feather feather-star">
+                                                                                <polygon
+                                                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                                                </polygon>
+                                                                            </svg></span>Subscription
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="dropdown-item" href="#!">
+                                                                        <span class="mr-2">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                width="14" height="14"
+                                                                                viewBox="0 0 24 24" fill="none"
+                                                                                stroke="currentColor" stroke-width="2"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                class="feather feather-settings">
+                                                                                <circle cx="12" cy="12" r="3"></circle>
+                                                                                <path
+                                                                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                                                                </path>
+                                                                            </svg></span>Settings
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="dropdown-divider"></div>
+                                                        <ul class="list-unstyled">
+                                                            <li onclick="logoutUser()">
+                                                                <span class="dropdown-item">
+                                                                    <span class="mr-2">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="14" height="14" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            class="feather feather-power">
+                                                                            <path d="M18.36 6.64a9 9 0 1 1-12.73 0">
+                                                                            </path>
+                                                                            <line x1="12" y1="2" x2="12" y2="12"></line>
+                                                                        </svg></span> <span>Sign Out</span>
+                                                                </span>
+                                                            </li>
+
+                                                        </ul>
+
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -467,7 +637,7 @@
             </form>
             <p style="margin-top: 10px; text-align: center;" id="last-para-login">
                 Don't have an account?
-                <a href="#"  id="creat-account">Create an Account</a>
+                <a href="#" id="creat-account">Create an Account</a>
             </p>
         </div>
     </div>

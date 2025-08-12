@@ -1,5 +1,5 @@
 import { auth } from "./config.js"
-import { createUserWithEmailAndPassword , signInWithEmailAndPassword} from "./auth.js"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword , onAuthStateChanged} from "./auth.js"
 
 
 
@@ -98,7 +98,7 @@ function resgisterUser(event) {
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
-      console.log(user , "ye woh user he jo register howa he")
+      console.log(user, "ye woh user he jo register howa he")
       // ...
     })
     .catch((error) => {
@@ -106,9 +106,9 @@ function resgisterUser(event) {
       const errorMessage = error.message;
       // ..
     });
-    fullName.value = ""
-    email.value = ""
-    password.value = ""
+  fullName.value = ""
+  email.value = ""
+  password.value = ""
 }
 
 let registerBtn = document.getElementById("register-btn")
@@ -124,7 +124,7 @@ function loginUser() {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      console.log(user , "ye woh user he jo login he")
+      console.log(user, "ye woh user he jo login he")
       // ...
     })
     .catch((error) => {
@@ -135,8 +135,27 @@ function loginUser() {
 }
 
 let loginbtn = document.getElementById("login-btn")
-loginbtn.addEventListener("click" , loginUser)
+loginbtn.addEventListener("click", loginUser)
 
+
+function checkLoggedInUser() {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+      const uid = user.uid;
+      console.log("ye wo user he jo is waqt login he ", user)
+      document.getElementById("login-word").style.display = "none"
+      let allIcons = document.getElementById("all-icons")
+      allIcons.style.display = "flex"
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+}
+
+checkLoggedInUser();
 
 
 // function logoutUser() {
@@ -187,30 +206,3 @@ loginbtn.addEventListener("click" , loginUser)
 //   location.reload();
 // }
 
-// function checkLoggedInUser() {
-//   console.log("Checking logged in user...");
-//   const loggedUser = JSON.parse(localStorage.getItem("loggedinUser"));
-//   const userDetails = document.getElementById("profile-dropdown");
-//   let loginbtn = document.getElementById("login-word");
-//   if (loggedUser) {
-//     document.getElementById("profile-icon").style.display = "none";
-//     loginbtn.style.display = "none"
-//     userDetails.style.display = "block"
-//     let userName = document.getElementById("userName");
-//     let userEmail = document.getElementById("userEmail");
-//     userName.innerHTML = loggedUser.fullName
-//     userEmail.innerHTML = loggedUser.email
-//   } else {
-//     userDetails.style.display = "none"
-//     loginbtn.style.display = "block"
-//     loginbtn.style.display = "block";
-//     loginbtn.style.height = "50px"
-//     loginbtn.style.width = "70px"
-//     loginbtn.style.display = "flex"
-//     loginbtn.style.justifyContent = "center"
-//     loginbtn.style.alignItems = "center"
-
-//   }
-// }
-
-// checkLoggedInUser();
