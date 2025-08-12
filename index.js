@@ -1,11 +1,5 @@
 import { auth } from "./config.js"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword , onAuthStateChanged} from "./auth.js"
-
-
-
-let cardElement = document.getElementById("cards");
-let loader = document.getElementById("main-div");
-
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./auth.js"
 
 function openLoginModal() {
   document.getElementById("loginModal").style.display = "block";
@@ -99,11 +93,20 @@ function resgisterUser(event) {
       // Signed up 
       const user = userCredential.user;
       console.log(user, "ye woh user he jo register howa he")
+      closeRegisterModal();
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      const paraElement = document.getElementById("para");
+      if (paraElement) {
+        paraElement.style.display = "block";
+        paraElement.textContent = "Email already registered. Please log in.";
+
+      } else {
+        console.warn("Element with id='para' not found");
+      }
       // ..
     });
   fullName.value = ""
@@ -117,25 +120,40 @@ registerBtn.addEventListener("click", resgisterUser)
 
 
 function loginUser() {
-  let email = document.getElementById("loginEmail");
-  let password = document.getElementById("loginPassword");
+  let email = document.getElementById("loginEmail").value.trim();
+  let password = document.getElementById("loginPassword").value.trim();
+
+  if (!email || !password) {
+    return;
+  }
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      closeLoginModal();
       // Signed in 
       const user = userCredential.user;
-      console.log(user, "ye woh user he jo login he")
+      console.log(user, "ye woh user he jo abhi abhi login howa he")
+      document.getElementById("invailed-para").style.display = "none"
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(errorMessage)
+      const paraElement = document.getElementById("invailed-para");
+      if (paraElement) {
+        paraElement.style.display = "block";
+        paraElement.textContent = "Invalid Credentials";
+
+      }
+      
     });
 
 }
 
 let loginbtn = document.getElementById("login-btn")
-loginbtn.addEventListener("click", loginUser)
+loginbtn.addEventListener("click", loginUser);
+
 
 
 function checkLoggedInUser() {
@@ -158,51 +176,18 @@ function checkLoggedInUser() {
 checkLoggedInUser();
 
 
-// function logoutUser() {
-//   localStorage.removeItem("loggedinUser")
-//   console.log("logout Clicked")
-//   let dropDown = document.getElementById("profile-dropdown");
-//   dropDown.style.display = "none"
-//   let loginbtn = document.getElementById("login-word");
-//   loginbtn.style.display = "block";
-//   loginbtn.style.height = "50px"
-//   loginbtn.style.width = "70px"
-//   loginbtn.style.display = "flex"
-//   loginbtn.style.justifyContent = "center"
-//   loginbtn.style.alignItems = "center"
+function logoutUser() {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    document.getElementById("login-word").style.display = "block"
+    document.getElementById("login-word").style.paddingTop = "12px"
+    let allIcons = document.getElementById("all-icons")
+    allIcons.style.display = "none"
+    console.log("sign-out")
+  }).catch((error) => {
+    // An error happened.
+  });
+}
 
-
-
-//   let loginText = document.getElementById("login-text");
-//   loginText.style.marginBottom = "20px"
-//   loginText.innerHTML = "Login";
-//   loginText.style.textAlign = "left";
-
-//   let eyeIcon = document.getElementById("eye-img");
-//   eyeIcon.style.display = "block";
-
-//   let lastPara = document.getElementById("last-para-login");
-//   lastPara.style.display = "block";
-
-//   let email = document.getElementById("loginEmail");
-//   let password = document.getElementById("loginPassword");
-//   email.style.margin = "0px"
-//   password.style.margin = "0px"
-//   email.style.display = "block";
-//   password.style.display = "block";
-//   email.value = "";
-//   password.value = "";
-
-//   let backBtn = document.getElementById("login-btn");
-//   backBtn.innerHTML = "Login";
-//   backBtn.onclick = loginUser;
-
-//   let invailedPara = document.getElementById("invailed-para");
-//   invailedPara.style.display = "none";
-
-//   loginbtn.onclick = function () {
-//     document.getElementById("loginModal").style.display = "block";
-//   }
-//   location.reload();
-// }
+document.getElementById("logout").addEventListener("click", logoutUser)
 

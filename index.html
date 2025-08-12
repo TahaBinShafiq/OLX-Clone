@@ -214,7 +214,7 @@
                                                         </div>
                                                         <div class="dropdown-divider"></div>
                                                         <ul class="list-unstyled">
-                                                            <li onclick="logoutUser()">
+                                                            <li id="logout">
                                                                 <span class="dropdown-item">
                                                                     <span class="mr-2">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +226,7 @@
                                                                             <path d="M18.36 6.64a9 9 0 1 1-12.73 0">
                                                                             </path>
                                                                             <line x1="12" y1="2" x2="12" y2="12"></line>
-                                                                        </svg></span> <span>Sign Out</span>
+                                                                        </svg></span><span>Sign Out</span>
                                                                 </span>
                                                             </li>
 
@@ -622,8 +622,8 @@
         <div class="modal-content">
             <span class="close" id="closeLogin">&times;</span>
             <h2 id="login-text">Login</h2>
-            <form>
-                <input class="inp" type="text" id="loginEmail" placeholder="Enter your Email" required><br>
+            <form id="loginForm"> 
+                <input class="inp" type="email" id="loginEmail" placeholder="Enter your Email" required><br>
                 <div class="password-wrapper">
                     <input class="inp" type="password" id="loginPassword" placeholder="Password" required>
                     <span class="toggle-eye" id="login-eye">
@@ -658,8 +658,8 @@
                             id="new-eye-img">
                     </span>
                 </div>
+                <p id="para" style="color: red;">This email is already registered</p>
                 <button class="btn-2" type="submit" id="register-btn">Register</button>
-                <p id="para"></p>
             </form>
         </div>
     </div>
