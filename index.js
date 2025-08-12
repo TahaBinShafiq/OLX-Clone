@@ -92,6 +92,13 @@ function resgisterUser(event) {
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
+      Swal.fire({
+        title: 'Registration Successful!',
+        text: 'Welcome ' + (fullName.value || 'User') + '!',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1000
+      });
       console.log(user, "ye woh user he jo register howa he")
       closeRegisterModal();
       // ...
@@ -137,8 +144,8 @@ function loginUser() {
         title: 'Login Successful!',
         text: 'Welcome back ' + (user.displayName || 'User') + '!',
         icon: 'success',
-        showConfirmButton: false, 
-        timer: 1500 
+        showConfirmButton: false,
+        timer: 1500
       });
       document.getElementById("invailed-para").style.display = "none"
       // ...
