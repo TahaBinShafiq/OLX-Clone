@@ -1,5 +1,6 @@
 import { auth } from "./config.js"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./auth.js"
+import { setDoc, collection, doc, getDocs } from "./firestore-db.js";
 
 function openLoginModal() {
   document.getElementById("loginModal").style.display = "block";
@@ -204,4 +205,10 @@ function logoutUser() {
 }
 
 document.getElementById("logout").addEventListener("click", logoutUser)
+
+
+
+
+
+
 
