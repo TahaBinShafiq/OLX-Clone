@@ -8,8 +8,6 @@ categoris.forEach(btn => {
 })
 
 
-
-
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
 
@@ -20,36 +18,34 @@ console.log(normalizedCategory)
 // create form dynamically
 container.innerHTML = `
   <div class="category-box">
-  <div><h4>Categoris</h4></div>
-<div style="display:flex; justify-content:center; align-items:center; gap:5px;">
+  <div><h5 style="margin-top:0px;">Categoris</h5></div>
+<div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-right:120px;">
 
-<img src="${
-  normalizedCategory === "mobiles"
-    ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
-    : normalizedCategory === "vehicles"
-    ? "https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
-    : normalizedCategory === "property for sale"
-    ? "https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
-    : normalizedCategory === "property for rent"
-    ? "https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
-    : "https://www.olx.com.pk/assets/default.png"
-}" alt="${normalizedCategory}" style="width:50px; height:50px; border-radius:5px;">
+<img src="${normalizedCategory === "mobiles"
+        ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
+        : normalizedCategory === "vehicles"
+            ? "https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
+            : normalizedCategory === "property for sale"
+                ? "https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
+                : normalizedCategory === "property for rent"
+                    ? "https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
+                    : "https://www.olx.com.pk/assets/default.png"
+    }" alt="${normalizedCategory}" style="width:50px; height:50px; border-radius:5px;">
 
   <div>
 
   <h3 style="font-size:15px;">${category ? category.charAt(0).toUpperCase() + category.slice(1) : "No Category"}</h3>
 
   <p style="font-size:12px;">
-    ${
-      category === "mobiles"
+    ${category === "mobiles"
         ? "Mobile Phones"
         : category === "vehicles"
-        ? "Vehicles"
-        : category === "property-sale"
-        ? "Property for Sale"
-        : category === "property-rent"
-        ? "Property for Rent"
-        : ""
+            ? "Vehicles"
+            : category === "property-sale"
+                ? "Property for Sale"
+                : category === "property-rent"
+                    ? "Property for Rent"
+                    : ""
     }
   </p>
 
@@ -59,17 +55,38 @@ container.innerHTML = `
   </div>
 
   <div class="upload-section">
-    <label>Upload Image</label>
+    <h5 style="margin-top:0px;">Upload Image</h5>
     <div class="upload-box">
       <input type="file" id="imageUpload" accept="image/*">
-      <span>+</span>
+      <span><svg width="20" fill="blue" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="_06fac551"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.67 9.2h-5.84V3.33L10 2.5l-.83.83V9.2H3.33l-.83.83.83.84h5.84v5.8l.83.83.83-.83v-5.8h5.84l.83-.84-.83-.83z"></path></svg></span>
     </div>
-    <p style="font-size:12px;color:gray;">Only 1 image allowed</p>
   </div>
 
+  <div class="line"></div>
+
   <div class="brand-section">
-    <label>Brand*</label>
+    <h5 style="margin-top:0px;">Brand*</h5>
+    <div class="input-brand">
     <input type="text" placeholder="Enter brand" id="brandInput">
+    </div>
+
+  </div>
+   <br>
+
+   <div class="line"></div>
+
+
+     <div class="brand-section">
+    <h5 style="margin-top:0px;">Add title*</h5>
+    <div class="input-brand">
+    <input type="text" placeholder="Enter title" id="brandInput">
+    </div>
+  </div>
+
+     
+     <div class="brand-section">
+    <h5 style="margin-top:0px;">Description*</h5>
+    <textarea placeholder="Enter discription"> </textarea> 
   </div>
 `;
 
