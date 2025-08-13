@@ -57,7 +57,7 @@ container.innerHTML = `
   <div class="upload-section">
     <h5 style="margin-top:0px;">Upload Image</h5>
     <div class="upload-box">
-      <input type="file" id="imageUpload" accept="image/*">
+      <input type="file" id="imageUpload" accept="image/*" required>
       <span><svg width="20" fill="blue" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="_06fac551"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.67 9.2h-5.84V3.33L10 2.5l-.83.83V9.2H3.33l-.83.83.83.84h5.84v5.8l.83.83.83-.83v-5.8h5.84l.83-.84-.83-.83z"></path></svg></span>
     </div>
   </div>
@@ -67,7 +67,7 @@ container.innerHTML = `
   <div class="brand-section">
     <h5 style="margin-top:0px;">Brand*</h5>
     <div class="input-brand">
-    <input type="text" placeholder="Enter brand" id="brandInput">
+    <input type="text" placeholder="Enter brand" id="brandInput" required>
     </div>
 
   </div>
@@ -79,7 +79,7 @@ container.innerHTML = `
      <div class="brand-section">
     <h5 style="margin-top:0px;">Add title*</h5>
     <div class="input-brand">
-    <input type="text" placeholder="Enter title" id="brandInput">
+    <input type="text" placeholder="Enter title" id="brandInput" required>
     </div>
   </div>
 
@@ -107,8 +107,42 @@ container.innerHTML = `
 `;
 
 document.getElementById("price-container").innerHTML = `
-<div class="location-box"> </div>
+<div class="location-box">
+     <div class="brand-section">
+    <h5 style="margin-top:0px;">Price*</h5>
+    <div class="input-brand">
+    <span class="rs">Rs</span>
+    <input type="number" placeholder="Enter Price" id="brandInput">
+    </div>
+  </div>
+ </div>
 `
+
+let ownerBox = document.getElementById("owner-box")
+if (ownerBox) {
+    ownerBox.innerHTML = `
+      <div class="location-box">
+        <div class="brand-section">
+          <h5 style="margin-top:0px;">Name*</h5>
+          <div class="input-brand">
+            <input type="number" placeholder="Enter Name" id="brandInput">
+          </div>
+        </div>
+
+
+         <div class="brand-section">
+          <h5 style="margin-top:0px;">Mobile Phone Number*</h5>
+          <div class="input-brand">
+          <span class="rs">+92</span>
+            <input type="number" placeholder="Enter phone number" id="brandInput">
+          </div>
+        </div>
+        <br>
+        <div  style="display:flex; justify-content:end;"><input type="submit" value="Post"></div>
+        
+      </div>  
+    `;
+}
 
 // image preview
 const uploadBox = document.querySelector(".upload-box");

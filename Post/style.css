@@ -200,7 +200,23 @@ textarea:focus-within {
   margin-top: 30px;
 }
 
+.rs{
+  color: grey;
+  font-size: smaller;
+  border-right: 1px solid gainsboro;
+  padding-right: 10px;
+}
 
+.owner-box{
+   max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+
+}
 
 .cate-change {
   font-weight: 600;
