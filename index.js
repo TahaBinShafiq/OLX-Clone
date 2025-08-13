@@ -1,5 +1,5 @@
 import { auth, db } from "./config.js"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./auth.js"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut , updateProfile } from "./auth.js"
 import { setDoc, collection, doc, getDocs, getDoc } from "./firestore-db.js";
 
 function openLoginModal() {
@@ -90,17 +90,23 @@ function resgisterUser(event) {
   let email = document.getElementById("email");
   let password = document.getElementById("NewPasswordInput");
   createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
+    .then(async (userCredential) => {
       // Signed up 
       const user = userCredential.user;
+
+       await updateProfile(user, {
+        displayName: fullName.value
+      });
+
+
       getuserToDb(email.value, fullName.value, user.uid)
       closeRegisterModal();
       Swal.fire({
         title: 'Registration Successful!',
-        text: 'Welcome ' + (fullName.value || 'User') + '!',
+        text: 'Welcome ' + (user.displayName || 'User') + '!',
         icon: 'success',
         showConfirmButton: false,
-        timer: 1000
+        timer: 2000
       });
       console.log(user, "ye woh user he jo register howa he")
       // ...
@@ -135,7 +141,7 @@ function loginUser() {
     return;
   }
 
-  signInWithEmailAndPassword(auth, email, password)
+  signInWithEmailAndPassword(auth, email, password ,)
     .then((userCredential) => {
       closeLoginModal();
       // Signed in 
