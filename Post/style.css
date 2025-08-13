@@ -166,7 +166,7 @@ main {
 textarea {
   width: 70%;
   height: 120px;
-  padding: 0px ;
+  padding: 0px;
   padding-top: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -178,9 +178,26 @@ textarea {
   outline: none;
 }
 
-textarea:focus-within{
+textarea:focus-within {
   outline: 1px solid #3A77FF
+}
 
+
+#region {
+  width: 99%;
+  height: 90%;
+  border: none;
+  outline: none;
+}
+
+.location-box {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
 }
 
 

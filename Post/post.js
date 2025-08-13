@@ -88,7 +88,27 @@ container.innerHTML = `
     <h5 style="margin-top:0px;">Description*</h5>
     <textarea placeholder="Enter discription"> </textarea> 
   </div>
+
+  <div class="brand-section">
+    <h5 style="margin-top:0px;">Location*</h5>
+    <div class="input-brand">
+    <select id="region" name="region" required >
+  <option value="" disabled selected>Choose region</option>
+  <option value="azad-kashmir">Azad Kashmir, Pakistan</option>
+  <option value="balochistan">Balochistan, Pakistan</option>
+  <option value="islamabad">Islamabad Capital Territory, Pakistan</option>
+  <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa, Pakistan</option>
+  <option value="northern-areas">Northern Areas, Pakistan</option>
+  <option value="punjab">Punjab, Pakistan</option>
+  <option value="sindh">Sindh, Pakistan</option>
+</select>
+    </div>
+  </div>
 `;
+
+document.getElementById("price-container").innerHTML = `
+<div class="location-box"> </div>
+`
 
 // image preview
 const uploadBox = document.querySelector(".upload-box");
