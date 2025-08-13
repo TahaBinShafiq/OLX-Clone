@@ -224,3 +224,19 @@ async function getuserToDb(userEmail, userName, userId) {
 
 
 
+document.getElementById("sellBtn").addEventListener("click", () => {
+  const user = auth.currentUser;
+
+  if (!user) {
+    openLoginModal();
+    const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
+      if (loggedInUser) {
+        unsubscribe(); 
+        window.location.href = "./Post/categoris.html";
+      }
+    });
+
+  } else {
+    window.location.href = "./Post/categoris.html";
+  }
+});
