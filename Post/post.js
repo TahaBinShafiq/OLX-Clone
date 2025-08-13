@@ -65,10 +65,36 @@ container.innerHTML = `
   <div class="line"></div>
 
   <div class="brand-section">
-    <h5 style="margin-top:0px;">Brand*</h5>
-    <div class="input-brand">
-    <input type="text" placeholder="Enter brand" id="brandInput" required>
-    </div>
+  
+   <h5 style="margin-top:0px;">
+  ${normalizedCategory === "mobiles" 
+      ? "Brand*" 
+      : normalizedCategory === "vehicles" 
+        ? "Make*" 
+        : normalizedCategory === "property for sale" 
+          ? "Type*" 
+          : normalizedCategory === "property for rent" 
+            ? "Area*" 
+            : "Brand*"}
+</h5>
+
+<div class="input-brand">
+  <input 
+    type="text" 
+    placeholder="${
+      normalizedCategory === "mobiles" 
+        ? "Enter brand" 
+        : normalizedCategory === "vehicles" 
+          ? "Enter make" 
+          : normalizedCategory === "property-sale" 
+            ? "Enter type" 
+            : normalizedCategory === "property-rent" 
+              ? "Enter area" 
+              : "Enter brand"
+    }" 
+    id="brandInput" 
+    required>
+</div>
 
   </div>
    <br>
@@ -138,7 +164,10 @@ if (ownerBox) {
           </div>
         </div>
         <br>
-        <div  style="display:flex; justify-content:end;"><input type="submit" value="Post"></div>
+        <div class="line"></div>
+        <br>
+
+        <div  style="display:flex; justify-content:end;"><input type="submit" value="Post Now" class="post-btn"></div>
         
       </div>  
     `;
