@@ -19,7 +19,7 @@ console.log(normalizedCategory)
 container.innerHTML = `
   <div class="category-box">
   <div><h5 style="margin-top:0px;">Categoris</h5></div>
-<div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-right:120px;">
+<div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-right:140px;">
 
 <img src="${normalizedCategory === "mobiles"
         ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
