@@ -1,6 +1,6 @@
-import { auth } from "./config.js"
+import { auth, db } from "./config.js"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./auth.js"
-import { setDoc, collection, doc, getDocs } from "./firestore-db.js";
+import { setDoc, collection, doc, getDocs, getDoc } from "./firestore-db.js";
 
 function openLoginModal() {
   document.getElementById("loginModal").style.display = "block";
@@ -93,6 +93,8 @@ function resgisterUser(event) {
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
+      getuserToDb(email.value, fullName.value, user.uid)
+      closeRegisterModal();
       Swal.fire({
         title: 'Registration Successful!',
         text: 'Welcome ' + (fullName.value || 'User') + '!',
@@ -101,7 +103,6 @@ function resgisterUser(event) {
         timer: 1000
       });
       console.log(user, "ye woh user he jo register howa he")
-      closeRegisterModal();
       // ...
     })
     .catch((error) => {
@@ -111,20 +112,19 @@ function resgisterUser(event) {
       if (paraElement) {
         paraElement.style.display = "block";
         paraElement.textContent = "Email already registered. Please log in.";
-
+        fullName.value = ""
+        email.value = ""
+        password.value = ""
       } else {
         console.warn("Element with id='para' not found");
       }
       // ..
     });
-  fullName.value = ""
-  email.value = ""
-  password.value = ""
 }
+
 
 let registerBtn = document.getElementById("register-btn")
 registerBtn.addEventListener("click", resgisterUser)
-
 
 
 function loginUser() {
@@ -172,7 +172,7 @@ loginbtn.addEventListener("click", loginUser);
 
 
 function checkLoggedInUser() {
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/auth.user
@@ -181,6 +181,13 @@ function checkLoggedInUser() {
       document.getElementById("login-word").style.display = "none"
       let allIcons = document.getElementById("all-icons")
       allIcons.style.display = "flex"
+
+      const docRef = doc(db, "users", user.uid);
+      const docSnap = await getDoc(docRef);
+
+      if(docSnap.exists()){
+         document.getElementById("userName").innerHTML = docSnap.data().fullName
+      }
     } else {
       // User is signed out
       // ...
@@ -203,11 +210,16 @@ function logoutUser() {
     // An error happened.
   });
 }
-
 document.getElementById("logout").addEventListener("click", logoutUser)
 
 
-
+async function getuserToDb(userEmail, userName, userId) {
+  const docRef = await setDoc(doc(db, "users", userId), {
+    email: userEmail,
+    fullName: userName,
+    userId: userId,
+  });
+}
 
 
 

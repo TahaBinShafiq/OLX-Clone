@@ -385,6 +385,11 @@
 
 }
 
+.pb-2{
+    position: absolute;
+    right: 0px;
+}
+
 .avatar-md {
     width: 56px;
     height: 56px;
