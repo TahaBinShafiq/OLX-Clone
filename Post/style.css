@@ -135,3 +135,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.cate-change{
+  font-weight: 600;
+  font-size: small;
+  color: blue;
+  text-decoration: none;
+ 
+}
