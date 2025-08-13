@@ -94,8 +94,9 @@ main {
 
 
 #post-container {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
+  margin-right: 0px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -191,8 +192,9 @@ textarea:focus-within {
 }
 
 .location-box {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
+  margin-right: 0px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -242,3 +244,50 @@ textarea:focus-within {
   height: 3px;
   background-color: #F2F4F5;
 }
+
+
+
+
+ .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid gainsboro;
+      padding: 20px 20px;
+      width: 250px !important;
+      margin-left: 20px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .card h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: small;
+      line-height: 20px;
+    }
+
+    .card ul {
+      padding-left: 0px;
+      margin-bottom: 15px;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+      color: black;
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: small;
+    }
+
+    .card .note {
+      font-size: 0.9em;
+      color: #777;
+      font-size: small;
+    }
