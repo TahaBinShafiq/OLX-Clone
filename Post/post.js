@@ -70,30 +70,29 @@ container.innerHTML = `
   <div class="brand-section">
   
    <h5 style="margin-top:0px;">
-  ${normalizedCategory === "mobiles" 
-      ? "Brand*" 
-      : normalizedCategory === "vehicles" 
-        ? "Make*" 
-        : normalizedCategory === "property for sale" 
-          ? "Type*" 
-          : normalizedCategory === "property for rent" 
-            ? "Area*" 
-            : "Brand*"}
+  ${normalizedCategory === "mobiles"
+        ? "Brand*"
+        : normalizedCategory === "vehicles"
+            ? "Make*"
+            : normalizedCategory === "property for sale"
+                ? "Type*"
+                : normalizedCategory === "property for rent"
+                    ? "Area*"
+                    : "Brand*"}
 </h5>
 
 <div class="input-brand">
   <input 
     type="text" 
-    placeholder="${
-      normalizedCategory === "mobiles" 
-        ? "Enter brand" 
-        : normalizedCategory === "vehicles" 
-          ? "Enter make" 
-          : normalizedCategory === "property-sale" 
-            ? "Enter type" 
-            : normalizedCategory === "property-rent" 
-              ? "Enter area" 
-              : "Enter brand"
+    placeholder="${normalizedCategory === "mobiles"
+        ? "Enter brand"
+        : normalizedCategory === "vehicles"
+            ? "Enter make"
+            : normalizedCategory === "property-sale"
+                ? "Enter type"
+                : normalizedCategory === "property-rent"
+                    ? "Enter area"
+                    : "Enter brand"
     }" 
     id="brandInput" 
     required>
@@ -108,20 +107,20 @@ container.innerHTML = `
      <div class="brand-section">
     <h5 style="margin-top:0px;">Add title*</h5>
     <div class="input-brand">
-    <input type="text" placeholder="Enter title" id="brandInput" required>
+    <input type="text" placeholder="Enter title" id="descriptionField" required>
     </div>
   </div>
 
      
      <div class="brand-section">
     <h5 style="margin-top:0px;">Description*</h5>
-    <textarea placeholder="Enter discription"> </textarea> 
+    <textarea id="descriptionField" placeholder="Enter description"></textarea>
   </div>
 
   <div class="brand-section">
     <h5 style="margin-top:0px;">Location*</h5>
     <div class="input-brand">
-    <select id="region" name="region" required >
+    <select id="regionField" name="region" required >
   <option value="" disabled selected>Choose region</option>
   <option value="azad-kashmir">Azad Kashmir, Pakistan</option>
   <option value="balochistan">Balochistan, Pakistan</option>
@@ -141,7 +140,7 @@ document.getElementById("price-container").innerHTML = `
     <h5 style="margin-top:0px;">Price*</h5>
     <div class="input-brand">
     <span class="rs">Rs</span>
-    <input type="number" placeholder="Enter Price" id="brandInput">
+    <input type="number" placeholder="Enter Price" id="priceField">
     </div>
   </div>
  </div>
@@ -155,7 +154,7 @@ if (ownerBox) {
           <h5 style="margin-top:0px;">Name*</h5>
           <div class="input-brand">
           <input type="hidden" name="category" id="categoryInput">
-            <input type="text" placeholder="Enter Name" id="brandInput">
+            <input type="text" placeholder="Enter Name" id="ownerNameField">
           </div>
         </div>
 
@@ -164,14 +163,14 @@ if (ownerBox) {
           <h5 style="margin-top:0px;">Mobile Phone Number*</h5>
           <div class="input-brand">
           <span class="rs">+92</span>
-            <input type="number" placeholder="Enter phone number" id="brandInput">
+            <input type="number" placeholder="Enter phone number" id="ownerPhoneField">
           </div>
         </div>
         <br>
         <div class="line"></div>
         <br>
 
-        <div  style="display:flex; justify-content:end;"><input type="submit" value="Post Now" class="post-btn"></div>
+        <div  style="display:flex; justify-content:end;"><input type="submit" id="postBtn" value="Post Now" class="post-btn"></div>
         
       </div>  
     `;
@@ -196,4 +195,31 @@ fileInput.addEventListener("change", (e) => {
         uploadBox.innerHTML = "";
         uploadBox.appendChild(img);
     }
+});
+
+
+
+const categoryInput = document.getElementById("categoryInput");
+const imageUpload = document.getElementById("imageUpload");
+const brandField = document.getElementById("brandInput"); // ✅ change
+const titleField = document.getElementById("descriptionField"); // ✅ change
+const descriptionField = document.getElementById("descriptionField"); // Or give textarea a new id and target that
+const regionField = document.getElementById("regionField");
+const priceField = document.getElementById("priceField");
+const ownerNameField = document.getElementById("ownerNameField");
+const ownerPhoneField = document.getElementById("ownerPhoneField");
+const postBtn = document.getElementById("postBtn");
+
+
+postBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // stop form submit for now
+    console.log("Category:", categoryInput.value);
+    console.log("Brand:", brandField.value);
+    console.log("Title:", titleField.value);
+    console.log("Description:", descriptionField.value);
+    console.log("Region:", regionField.value);
+    console.log("Price:", priceField.value);
+    console.log("Owner Name:", ownerNameField.value);
+    console.log("Owner Phone:", ownerPhoneField.value);
+    console.log("Image File:", imageUpload.files[0]);
 });
