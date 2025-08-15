@@ -162,7 +162,9 @@ main {
 }
 
 .error-msg{
-  font-size: smaller;
+  font-size: 10px;
+  padding-left: 5px;
+  padding-top: 2px;
   color: red;
   display: none;
 }

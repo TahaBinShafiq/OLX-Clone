@@ -1,4 +1,4 @@
-import { doc, setDoc } from "../firestore-db.js";
+import { addDoc, collection, doc, setDoc } from "../firestore-db.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 import { db } from "../config.js";
 
@@ -60,7 +60,7 @@ container.innerHTML = `
   <div class="upload-section">
     <h5 style="margin-top:0px;">Upload Image</h5>
     <div class="upload-box">
-      <input type="file" id="imageUpload" accept="image/*" required>
+      <input type="file" id="imageUpload" accept="image/*">
       <span>
         <svg width="20" fill="blue" height="20" viewBox="0 0 20 20">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M16.67 9.2h-5.84V3.33L10 2.5l-.83.83V9.2H3.33l-.83.83.83.84h5.84v5.8l.83.83.83-.83v-5.8h5.84l.83-.84-.83-.83z"></path>
@@ -195,6 +195,7 @@ const regionField = document.getElementById("regionField");
 const priceField = document.getElementById("priceField");
 const ownerNameField = document.getElementById("ownerNameField");
 const ownerPhoneField = document.getElementById("ownerPhoneField");
+
 document.getElementById("categoryInput").value = category || "";
 
 // image preview
@@ -218,10 +219,11 @@ fileInput.addEventListener("change", (e) => {
 
 const postBtn = document.getElementById("postBtn");
 const postForm = document.getElementById("postForm")
+
+
 postBtn.addEventListener("click", async function (e) {
     e.preventDefault();
-    const inputs = [imageUpload, brandField, titleField, descriptionField, regionField, priceField, ownerNameField, ownerPhoneField
-    ];
+    const inputs = [imageUpload, brandField, titleField, descriptionField, regionField, priceField, ownerNameField, ownerPhoneField];
 
     let isValid = true;
 
@@ -230,7 +232,6 @@ postBtn.addEventListener("click", async function (e) {
         const errorSpan = container ? container.querySelector(".error-msg") : null;
 
         let filled = true;
-
         if (input.type === "file") {
             filled = input.files.length > 0;
         } else if (input.tagName.toLowerCase() === "select") {
@@ -238,7 +239,6 @@ postBtn.addEventListener("click", async function (e) {
         } else {
             filled = input.value.trim() !== "";
         }
-
         if (!filled) {
             isValid = false;
             if (errorSpan) errorSpan.style.display = "block";
@@ -251,8 +251,20 @@ postBtn.addEventListener("click", async function (e) {
         const auth = getAuth();
         const user = auth.currentUser;
         try {
-            const newDocRef = doc(db, "posts",  user.uid)
-            await setDoc(newDocRef, {
+
+            Swal.fire({
+                title: 'Posting...',
+                text: 'Please wait while we save your post.',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+                
+            });
+
+            const postsRef = collection(db, "posts");
+            await addDoc(postsRef, {
                 postOwnerId: user.uid,
                 category: categoryInput.value,
                 brand: brandField.value,
@@ -262,26 +274,27 @@ postBtn.addEventListener("click", async function (e) {
                 price: priceField.value,
                 ownerName: ownerNameField.value,
                 ownerPhone: ownerPhoneField.value,
-                timestamp: Date.now(),
-                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrmbEEUOzvUm5sSXoEL0gjmTUutwQSDqKpg&s"
+                timestamp: new Date().toISOString(),
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrmbEEUOzvUm5sSXoEL0gjmTUutwQSDqKpg&s"
+            });
+            if (postForm) {
+                postForm.reset(); // Form reset
+            }
+            Swal.fire({
+                title: 'Post Successful!',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500
             });
 
-            alert("Post saved successfully!");
-            if(postForm){
-                imageUpload.value = ""
-                brandField.value = ""
-                titleField.value = ""
-                descriptionField.value = ""
-                regionField.value = ""
-                priceField.value = ""
-                ownerNameField.value = ""
-                ownerPhoneField.value = ""
-            }
         } catch (error) {
             console.error("Error saving post:", error);
-            alert("Failed to save post. Try again!");
+            Swal.fire({
+                title: 'Error!',
+                text: 'Failed to save post. Try again.',
+                icon: 'error'
+            });
         }
-
     } else {
         console.log("Form has empty fields, fix them first.");
     }
