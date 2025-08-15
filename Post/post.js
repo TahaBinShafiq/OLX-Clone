@@ -260,7 +260,7 @@ postBtn.addEventListener("click", async function (e) {
                 didOpen: () => {
                     Swal.showLoading();
                 }
-                
+
             });
 
             const postsRef = collection(db, "posts");
@@ -285,7 +285,9 @@ postBtn.addEventListener("click", async function (e) {
                 icon: 'success',
                 showConfirmButton: false,
                 timer: 1500
-            });
+            }).then(() =>{
+                window.location.href = "../index.html"
+            })
 
         } catch (error) {
             console.error("Error saving post:", error);
