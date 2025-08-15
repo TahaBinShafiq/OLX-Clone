@@ -195,7 +195,6 @@ const regionField = document.getElementById("regionField");
 const priceField = document.getElementById("priceField");
 const ownerNameField = document.getElementById("ownerNameField");
 const ownerPhoneField = document.getElementById("ownerPhoneField");
-
 document.getElementById("categoryInput").value = category || "";
 
 // image preview
@@ -219,8 +218,6 @@ fileInput.addEventListener("change", (e) => {
 
 const postBtn = document.getElementById("postBtn");
 const postForm = document.getElementById("postForm")
-
-
 postBtn.addEventListener("click", async function (e) {
     e.preventDefault();
     const inputs = [imageUpload, brandField, titleField, descriptionField, regionField, priceField, ownerNameField, ownerPhoneField
@@ -272,6 +269,13 @@ postBtn.addEventListener("click", async function (e) {
             alert("Post saved successfully!");
             if(postForm){
                 imageUpload.value = ""
+                brandField.value = ""
+                titleField.value = ""
+                descriptionField.value = ""
+                regionField.value = ""
+                priceField.value = ""
+                ownerNameField.value = ""
+                ownerPhoneField.value = ""
             }
         } catch (error) {
             console.error("Error saving post:", error);
