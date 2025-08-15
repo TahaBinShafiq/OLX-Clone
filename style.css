@@ -700,7 +700,7 @@ h1 {
 
 
 .card-container {
-    height: fit-content;
+    height: 500px;
     width: 1264px;
     border: none;
     display: flex;

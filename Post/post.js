@@ -285,7 +285,7 @@ postBtn.addEventListener("click", async function (e) {
                 icon: 'success',
                 showConfirmButton: false,
                 timer: 1500
-            }).then(() =>{
+            }).then(() => {
                 window.location.href = "../index.html"
             })
 
