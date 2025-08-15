@@ -269,8 +269,8 @@ async function getPost() {
                     </div>
                 </div>
                 <p class="title">${post.title}</p>
-                <p class="location">DHA Defence, Lahore</p>
-                <p class="time">1 week ago</p>
+                <p class="location">${post.region}</p>
+                <p class="time">${post.timestamp}</p>
             </div>
         </div>`
     })
