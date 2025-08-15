@@ -1001,15 +1001,22 @@ h1 {
         width: 50%;
     }
     .small__navbar{
-        width: 100%;
+        width: 72%;
         height: auto;
         flex-direction:column ;
         justify-content: start !important;
         padding: 0px;
+        gap: 10px;
     }
 
     .logos{
         width: 100%;
+        justify-content: center;
+    }
+
+    .item-2{
+        width: 100%;
+        justify-content: end !important;
     }
 
     .all-icons{
@@ -1202,7 +1209,7 @@ h1 {
     }
 
     .ser-item-3 {
-        ;
+        width: fit-content;
     }
 
     .bottom {
