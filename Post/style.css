@@ -17,6 +17,10 @@ main {
   background-color: #F7F8F8;
 }
 
+.input-container{
+  width: 72%;
+}
+
 .back-arrow {
   font-size: 20px;
   cursor: pointer;
@@ -151,6 +155,12 @@ main {
   gap: 10px;
   cursor: pointer;
   padding-left: 10px;
+}
+
+.error-msg{
+  font-size: smaller;
+  color: red;
+  display: none;
 }
 
 .input-brand:focus-within {

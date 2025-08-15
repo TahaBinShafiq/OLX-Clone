@@ -24,31 +24,29 @@ container.innerHTML = `
   <div class="category-box">
     <div><h5 style="margin-top:0px;">Categories</h5></div>
     <div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-right:140px;">
-      <img src="${
-        normalizedCategory === "mobiles"
-          ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
-          : normalizedCategory === "vehicles"
-          ? "https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
-          : normalizedCategory === "property for sale"
-          ? "https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
-          : normalizedCategory === "property for rent"
-          ? "https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
-          : "https://www.olx.com.pk/assets/default.png"
-      }" alt="${normalizedCategory}" style="width:50px; height:50px; border-radius:5px;">
+      <img src="${normalizedCategory === "mobiles"
+        ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
+        : normalizedCategory === "vehicles"
+            ? "https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
+            : normalizedCategory === "property for sale"
+                ? "https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
+                : normalizedCategory === "property for rent"
+                    ? "https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
+                    : "https://www.olx.com.pk/assets/default.png"
+    }" alt="${normalizedCategory}" style="width:50px; height:50px; border-radius:5px;">
       <div>
-        <h3 style="font-size:15px;">${
-          category ? category.charAt(0).toUpperCase() + category.slice(1) : "No Category"
-        }</h3>
+        <h3 style="font-size:15px;">${category ? category.charAt(0).toUpperCase() + category.slice(1) : "No Category"
+    }</h3>
         <p style="font-size:12px;">
           ${category === "mobiles"
-            ? "Mobile Phones"
-            : category === "vehicles"
+        ? "Mobile Phones"
+        : category === "vehicles"
             ? "Vehicles"
             : category === "property-sale"
-            ? "Property for Sale"
-            : category === "property-rent"
-            ? "Property for Rent"
-            : ""}
+                ? "Property for Sale"
+                : category === "property-rent"
+                    ? "Property for Rent"
+                    : ""}
         </p>
       </div>
     </div>
@@ -64,78 +62,91 @@ container.innerHTML = `
           <path fill-rule="evenodd" clip-rule="evenodd" d="M16.67 9.2h-5.84V3.33L10 2.5l-.83.83V9.2H3.33l-.83.83.83.84h5.84v5.8l.83.83.83-.83v-5.8h5.84l.83-.84-.83-.83z"></path>
         </svg>
       </span>
+      <span class="error-msg">Fill this Field</span>
     </div>
   </div>
 
   <div class="line"></div>
 
   <div class="brand-section">
-    <h5 style="margin-top:0px;">
-      ${normalizedCategory === "mobiles"
+    <h5 style="margin-top:0px;">${normalizedCategory === "mobiles"
         ? "Brand*"
         : normalizedCategory === "vehicles"
-        ? "Make*"
-        : normalizedCategory === "property for sale"
-        ? "Type*"
-        : normalizedCategory === "property for rent"
-        ? "Area*"
-        : "Brand*"}
-    </h5>
-    <div class="input-brand">
-      <input 
-        type="text" 
-        placeholder="${
-          normalizedCategory === "mobiles"
-            ? "Enter brand"
-            : normalizedCategory === "vehicles"
+            ? "Make*"
+            : normalizedCategory === "property for sale"
+                ? "Type*"
+                : normalizedCategory === "property for rent"
+                    ? "Area*"
+                    : "Brand*"
+    }</h5>
+    <div class="input-container">
+      <div class="input-brand">
+        <input 
+          type="text" 
+          placeholder="${normalizedCategory === "mobiles"
+        ? "Enter brand"
+        : normalizedCategory === "vehicles"
             ? "Enter make"
             : normalizedCategory === "property-sale"
-            ? "Enter type"
-            : normalizedCategory === "property-rent"
-            ? "Enter area"
-            : "Enter brand"
-        }" 
-        id="brandInput" 
-        required>
+                ? "Enter type"
+                : normalizedCategory === "property-rent"
+                    ? "Enter area"
+                    : "Enter brand"
+    }" 
+          id="brandInput" 
+          required>
+      </div>
+      <span class="error-msg">Fill this Field</span>
     </div>
   </div>
-  <br>
 
   <div class="line"></div>
   <div class="brand-section">
     <h5 style="margin-top:0px;">Add title*</h5>
-    <div class="input-brand">
-      <input type="text" placeholder="Enter title" id="titleField" required>
+    <div class="input-container">
+      <div class="input-brand">
+        <input type="text" placeholder="Enter title" id="titleField" required>
+        </div>
+        <span class="error-msg">Fill this Field</span>
     </div>
   </div>
 
   <div class="brand-section">
     <h5 style="margin-top:0px;">Description*</h5>
-    <textarea id="descriptionField" placeholder="Enter description" required></textarea>
+    <div class="input-container">
+      <textarea id="descriptionField" placeholder="Enter description" required></textarea>
+      <span class="error-msg">Fill this Field</span>
+    </div>
   </div>
 
   <div class="brand-section">
     <h5 style="margin-top:0px;">Location*</h5>
-    <div class="input-brand">
-      <select id="regionField" name="region" required>
-        <option value="" disabled selected>Choose region</option>
-        <option value="azad-kashmir">Azad Kashmir, Pakistan</option>
-        <option value="balochistan">Balochistan, Pakistan</option>
-        <option value="islamabad">Islamabad Capital Territory, Pakistan</option>
-        <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa, Pakistan</option>
-        <option value="northern-areas">Northern Areas, Pakistan</option>
-        <option value="punjab">Punjab, Pakistan</option>
-        <option value="sindh">Sindh, Pakistan</option>
-      </select>
+    <div class="input-container">
+      <div class="input-brand">
+        <select id="regionField" name="region" required>
+          <option value="" disabled selected>Choose region</option>
+          <option value="azad-kashmir">Azad Kashmir, Pakistan</option>
+          <option value="balochistan">Balochistan, Pakistan</option>
+          <option value="islamabad">Islamabad Capital Territory, Pakistan</option>
+          <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa, Pakistan</option>
+          <option value="northern-areas">Northern Areas, Pakistan</option>
+          <option value="punjab">Punjab, Pakistan</option>
+          <option value="sindh">Sindh, Pakistan</option>
+        </select>
+      </div>
+      <span class="error-msg">Fill this Field</span>
     </div>
   </div>
 
   <div class="location-box">
     <div class="brand-section">
       <h5 style="margin-top:0px;">Price*</h5>
-      <div class="input-brand">
-        <span class="rs">Rs</span>
-        <input type="number" placeholder="Enter Price" id="priceField" required>
+      <div class="input-container">
+        <div class="input-brand">
+          <span class="rs">Rs</span>
+          <input type="number" placeholder="Enter Price" id="priceField" required>
+        </div>
+        <span class="error-msg">Fill this Field</span>
       </div>
     </div>
   </div>
@@ -143,17 +154,23 @@ container.innerHTML = `
   <div class="location-box">
     <div class="brand-section">
       <h5 style="margin-top:0px;">Name*</h5>
-      <div class="input-brand">
-        <input type="hidden" name="category" id="categoryInput">
-        <input type="text" placeholder="Enter Name" id="ownerNameField" required>
+      <div class="input-container">
+        <div class="input-brand">
+          <input type="hidden" name="category" id="categoryInput">
+          <input type="text" placeholder="Enter Name" id="ownerNameField" required>
+        </div>
+        <span class="error-msg">Fill this Field</span>
       </div>
     </div>
 
     <div class="brand-section">
       <h5 style="margin-top:0px;">Mobile Phone Number*</h5>
-      <div class="input-brand">
-        <span class="rs">+92</span>
-        <input type="number" placeholder="Enter phone number" id="ownerPhoneField" pattern="[0-9]{10}" required>
+      <div class="input-container">
+        <div class="input-brand">
+          <span class="rs">+92</span>
+          <input type="number" placeholder="Enter phone number" id="ownerPhoneField" pattern="[0-9]{10}" required>
+        </div>
+        <span class="error-msg">Fill this Field</span>
       </div>
     </div>
 
@@ -164,7 +181,15 @@ container.innerHTML = `
   </div>
 </form>
 `;
-
+const categoryInput = document.getElementById("categoryInput");
+const imageUpload = document.getElementById("imageUpload");
+const brandField = document.getElementById("brandInput");
+const titleField = document.getElementById("descriptionField");
+const descriptionField = document.getElementById("descriptionField");
+const regionField = document.getElementById("regionField");
+const priceField = document.getElementById("priceField");
+const ownerNameField = document.getElementById("ownerNameField");
+const ownerPhoneField = document.getElementById("ownerPhoneField");
 
 document.getElementById("categoryInput").value = category || "";
 
@@ -187,23 +212,56 @@ fileInput.addEventListener("change", (e) => {
     }
 });
 
-
-
-
-
-const categoryInput = document.getElementById("categoryInput");
-const imageUpload = document.getElementById("imageUpload");
-const brandField = document.getElementById("brandInput"); // ✅ change
-const titleField = document.getElementById("descriptionField"); // ✅ change
-const descriptionField = document.getElementById("descriptionField"); // Or give textarea a new id and target that
-const regionField = document.getElementById("regionField");
-const priceField = document.getElementById("priceField");
-const ownerNameField = document.getElementById("ownerNameField");
-const ownerPhoneField = document.getElementById("ownerPhoneField");
-
-
-
 const postBtn = document.getElementById("postBtn");
+
+
+postBtn.addEventListener("click", function (e) {
+    e.preventDefault(); // Form submit rok do
+
+    // Sab inputs ko array me daalo
+    const inputs = [
+        imageUpload,
+        brandField,
+        titleField,
+        descriptionField,
+        regionField,
+        priceField,
+        ownerNameField,
+        ownerPhoneField
+    ];
+
+    let isValid = true;
+
+    inputs.forEach(input => {
+        const container = input.closest(".input-container");
+        const errorSpan = container ? container.querySelector(".error-msg") : null;
+
+        let filled = true;
+
+        if (input.type === "file") {
+            filled = input.files.length > 0;
+        } else if (input.tagName.toLowerCase() === "select") {
+            filled = input.value !== "";
+        } else {
+            filled = input.value.trim() !== "";
+        }
+
+        if (!filled) {
+            isValid = false;
+            if (errorSpan) errorSpan.style.display = "block";
+        } else {
+            if (errorSpan) errorSpan.style.display = "none";
+        }
+    });
+
+    if (isValid) {
+        console.log("Form submitted successfully!");
+        // Agar backend submit chahiye: postForm.submit();
+    } else {
+        console.log("Form has empty fields, fix them first.");
+    }
+});
+
 
 
 postBtn.addEventListener("click", (e) => {
@@ -217,18 +275,4 @@ postBtn.addEventListener("click", (e) => {
     console.log("Owner Name:", ownerNameField.value);
     console.log("Owner Phone:", ownerPhoneField.value);
     console.log("Image File:", imageUpload.files[0]);
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const postForm = document.getElementById("postForm");
-    postForm.addEventListener("submit", function (event) {
-        if (!postForm.checkValidity()) {
-            event.preventDefault();
-            postForm.reportValidity();
-        } else {
-            console.log("Form submitted successfully");
-        }
-    });
 });
