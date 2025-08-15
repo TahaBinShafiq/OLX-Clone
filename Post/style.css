@@ -202,15 +202,15 @@ textarea:focus-within {
   margin-top: 30px;
 }
 
-.rs{
+.rs {
   color: grey;
   font-size: smaller;
   border-right: 1px solid gainsboro;
   padding-right: 10px;
 }
 
-.owner-box{
-   max-width: 600px;
+.owner-box {
+  max-width: 600px;
   margin: auto;
   background: #fff;
   border: 1px solid #ddd;
@@ -219,7 +219,7 @@ textarea:focus-within {
   margin-top: 30px;
 }
 
-.post-btn{
+.post-btn {
   padding: 18px;
   background-color: #003b3f;
   border: none;
@@ -248,46 +248,51 @@ textarea:focus-within {
 
 
 
- .card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      border: 1px solid gainsboro;
-      padding: 20px 20px;
-      width: 250px !important;
-      margin-left: 20px;
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      gap: 0px;
-    }
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+  padding: 20px 20px;
+  width: 250px !important;
+  margin-left: 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
 
-    .card h2 {
-      color: #333;
-      margin-bottom: 10px;
-    }
+.card h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
 
-    .card p {
-      color: #555;
-      margin-bottom: 15px;
-      font-size: small;
-      line-height: 20px;
-    }
+.card p {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: small;
+  line-height: 20px;
+}
 
-    .card ul {
-      padding-left: 0px;
-      margin-bottom: 15px;
-    }
+.card ul {
+  padding-left: 0px;
+  margin-bottom: 15px;
+}
 
-    .card ul li {
-      margin-bottom: 8px;
-      color: black;
-      text-decoration: underline;
-      font-weight: 600;
-      font-size: small;
-    }
+.card ul li {
+  margin-bottom: 8px;
+  color: black;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: small;
+}
 
-    .card .note {
-      font-size: 0.9em;
-      color: #777;
-      font-size: small;
-    }
+.card .note {
+  font-size: 0.9em;
+  color: #777;
+  font-size: small;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}

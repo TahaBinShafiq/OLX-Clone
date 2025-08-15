@@ -20,40 +20,38 @@ const normalizedCategory = category
 // console.log(normalizedCategory)
 // create form dynamically
 container.innerHTML = `
+<form id="postForm">
   <div class="category-box">
-  <div><h5 style="margin-top:0px;">Categoris</h5></div>
-<div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-right:140px;">
-
-<img src="${normalizedCategory === "mobiles"
-        ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
-        : normalizedCategory === "vehicles"
-            ? "https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
-            : normalizedCategory === "property for sale"
-                ? "https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
-                : normalizedCategory === "property for rent"
-                    ? "https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
-                    : "https://www.olx.com.pk/assets/default.png"
-    }" alt="${normalizedCategory}" style="width:50px; height:50px; border-radius:5px;">
-
-  <div>
-
-  <h3 style="font-size:15px;">${category ? category.charAt(0).toUpperCase() + category.slice(1) : "No Category"}</h3>
-
-  <p style="font-size:12px;">
-    ${category === "mobiles"
-        ? "Mobile Phones"
-        : category === "vehicles"
+    <div><h5 style="margin-top:0px;">Categories</h5></div>
+    <div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-right:140px;">
+      <img src="${
+        normalizedCategory === "mobiles"
+          ? "https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
+          : normalizedCategory === "vehicles"
+          ? "https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
+          : normalizedCategory === "property for sale"
+          ? "https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
+          : normalizedCategory === "property for rent"
+          ? "https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
+          : "https://www.olx.com.pk/assets/default.png"
+      }" alt="${normalizedCategory}" style="width:50px; height:50px; border-radius:5px;">
+      <div>
+        <h3 style="font-size:15px;">${
+          category ? category.charAt(0).toUpperCase() + category.slice(1) : "No Category"
+        }</h3>
+        <p style="font-size:12px;">
+          ${category === "mobiles"
+            ? "Mobile Phones"
+            : category === "vehicles"
             ? "Vehicles"
             : category === "property-sale"
-                ? "Property for Sale"
-                : category === "property-rent"
-                    ? "Property for Rent"
-                    : ""
-    }
-  </p>
-
-  </div>
-</div>
+            ? "Property for Sale"
+            : category === "property-rent"
+            ? "Property for Rent"
+            : ""}
+        </p>
+      </div>
+    </div>
     <a href="./categoris.html" class="cate-change">Change</a>
   </div>
 
@@ -61,120 +59,112 @@ container.innerHTML = `
     <h5 style="margin-top:0px;">Upload Image</h5>
     <div class="upload-box">
       <input type="file" id="imageUpload" accept="image/*" required>
-      <span><svg width="20" fill="blue" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="_06fac551"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.67 9.2h-5.84V3.33L10 2.5l-.83.83V9.2H3.33l-.83.83.83.84h5.84v5.8l.83.83.83-.83v-5.8h5.84l.83-.84-.83-.83z"></path></svg></span>
+      <span>
+        <svg width="20" fill="blue" height="20" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.67 9.2h-5.84V3.33L10 2.5l-.83.83V9.2H3.33l-.83.83.83.84h5.84v5.8l.83.83.83-.83v-5.8h5.84l.83-.84-.83-.83z"></path>
+        </svg>
+      </span>
     </div>
   </div>
 
   <div class="line"></div>
 
   <div class="brand-section">
-  
-   <h5 style="margin-top:0px;">
-  ${normalizedCategory === "mobiles"
+    <h5 style="margin-top:0px;">
+      ${normalizedCategory === "mobiles"
         ? "Brand*"
         : normalizedCategory === "vehicles"
-            ? "Make*"
-            : normalizedCategory === "property for sale"
-                ? "Type*"
-                : normalizedCategory === "property for rent"
-                    ? "Area*"
-                    : "Brand*"}
-</h5>
-
-<div class="input-brand">
-  <input 
-    type="text" 
-    placeholder="${normalizedCategory === "mobiles"
-        ? "Enter brand"
-        : normalizedCategory === "vehicles"
+        ? "Make*"
+        : normalizedCategory === "property for sale"
+        ? "Type*"
+        : normalizedCategory === "property for rent"
+        ? "Area*"
+        : "Brand*"}
+    </h5>
+    <div class="input-brand">
+      <input 
+        type="text" 
+        placeholder="${
+          normalizedCategory === "mobiles"
+            ? "Enter brand"
+            : normalizedCategory === "vehicles"
             ? "Enter make"
             : normalizedCategory === "property-sale"
-                ? "Enter type"
-                : normalizedCategory === "property-rent"
-                    ? "Enter area"
-                    : "Enter brand"
-    }" 
-    id="brandInput" 
-    required>
-</div>
-
+            ? "Enter type"
+            : normalizedCategory === "property-rent"
+            ? "Enter area"
+            : "Enter brand"
+        }" 
+        id="brandInput" 
+        required>
+    </div>
   </div>
-   <br>
+  <br>
 
-   <div class="line"></div>
-
-
-     <div class="brand-section">
+  <div class="line"></div>
+  <div class="brand-section">
     <h5 style="margin-top:0px;">Add title*</h5>
     <div class="input-brand">
-    <input type="text" placeholder="Enter title" id="descriptionField" required>
+      <input type="text" placeholder="Enter title" id="titleField" required>
     </div>
   </div>
 
-     
-     <div class="brand-section">
+  <div class="brand-section">
     <h5 style="margin-top:0px;">Description*</h5>
-    <textarea id="descriptionField" placeholder="Enter description"></textarea>
+    <textarea id="descriptionField" placeholder="Enter description" required></textarea>
   </div>
 
   <div class="brand-section">
     <h5 style="margin-top:0px;">Location*</h5>
     <div class="input-brand">
-    <select id="regionField" name="region" required >
-  <option value="" disabled selected>Choose region</option>
-  <option value="azad-kashmir">Azad Kashmir, Pakistan</option>
-  <option value="balochistan">Balochistan, Pakistan</option>
-  <option value="islamabad">Islamabad Capital Territory, Pakistan</option>
-  <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa, Pakistan</option>
-  <option value="northern-areas">Northern Areas, Pakistan</option>
-  <option value="punjab">Punjab, Pakistan</option>
-  <option value="sindh">Sindh, Pakistan</option>
-</select>
+      <select id="regionField" name="region" required>
+        <option value="" disabled selected>Choose region</option>
+        <option value="azad-kashmir">Azad Kashmir, Pakistan</option>
+        <option value="balochistan">Balochistan, Pakistan</option>
+        <option value="islamabad">Islamabad Capital Territory, Pakistan</option>
+        <option value="khyber-pakhtunkhwa">Khyber Pakhtunkhwa, Pakistan</option>
+        <option value="northern-areas">Northern Areas, Pakistan</option>
+        <option value="punjab">Punjab, Pakistan</option>
+        <option value="sindh">Sindh, Pakistan</option>
+      </select>
     </div>
   </div>
+
+  <div class="location-box">
+    <div class="brand-section">
+      <h5 style="margin-top:0px;">Price*</h5>
+      <div class="input-brand">
+        <span class="rs">Rs</span>
+        <input type="number" placeholder="Enter Price" id="priceField" required>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-box">
+    <div class="brand-section">
+      <h5 style="margin-top:0px;">Name*</h5>
+      <div class="input-brand">
+        <input type="hidden" name="category" id="categoryInput">
+        <input type="text" placeholder="Enter Name" id="ownerNameField" required>
+      </div>
+    </div>
+
+    <div class="brand-section">
+      <h5 style="margin-top:0px;">Mobile Phone Number*</h5>
+      <div class="input-brand">
+        <span class="rs">+92</span>
+        <input type="number" placeholder="Enter phone number" id="ownerPhoneField" pattern="[0-9]{10}" required>
+      </div>
+    </div>
+
+    <br><div class="line"></div><br>
+    <div style="display:flex; justify-content:end;">
+      <input type="submit" id="postBtn" value="Post Now" class="post-btn">
+    </div>
+  </div>
+</form>
 `;
 
-document.getElementById("price-container").innerHTML = `
-<div class="location-box">
-     <div class="brand-section">
-    <h5 style="margin-top:0px;">Price*</h5>
-    <div class="input-brand">
-    <span class="rs">Rs</span>
-    <input type="number" placeholder="Enter Price" id="priceField">
-    </div>
-  </div>
- </div>
-`
-
-let ownerBox = document.getElementById("owner-box")
-if (ownerBox) {
-    ownerBox.innerHTML = `
-      <div class="location-box">
-        <div class="brand-section">
-          <h5 style="margin-top:0px;">Name*</h5>
-          <div class="input-brand">
-          <input type="hidden" name="category" id="categoryInput">
-            <input type="text" placeholder="Enter Name" id="ownerNameField">
-          </div>
-        </div>
-
-
-         <div class="brand-section">
-          <h5 style="margin-top:0px;">Mobile Phone Number*</h5>
-          <div class="input-brand">
-          <span class="rs">+92</span>
-            <input type="number" placeholder="Enter phone number" id="ownerPhoneField">
-          </div>
-        </div>
-        <br>
-        <div class="line"></div>
-        <br>
-
-        <div  style="display:flex; justify-content:end;"><input type="submit" id="postBtn" value="Post Now" class="post-btn"></div>
-        
-      </div>  
-    `;
-}
 
 document.getElementById("categoryInput").value = category || "";
 
@@ -199,6 +189,8 @@ fileInput.addEventListener("change", (e) => {
 
 
 
+
+
 const categoryInput = document.getElementById("categoryInput");
 const imageUpload = document.getElementById("imageUpload");
 const brandField = document.getElementById("brandInput"); // ✅ change
@@ -208,6 +200,9 @@ const regionField = document.getElementById("regionField");
 const priceField = document.getElementById("priceField");
 const ownerNameField = document.getElementById("ownerNameField");
 const ownerPhoneField = document.getElementById("ownerPhoneField");
+
+
+
 const postBtn = document.getElementById("postBtn");
 
 
@@ -222,4 +217,18 @@ postBtn.addEventListener("click", (e) => {
     console.log("Owner Name:", ownerNameField.value);
     console.log("Owner Phone:", ownerPhoneField.value);
     console.log("Image File:", imageUpload.files[0]);
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const postForm = document.getElementById("postForm");
+    postForm.addEventListener("submit", function (event) {
+        if (!postForm.checkValidity()) {
+            event.preventDefault();
+            postForm.reportValidity();
+        } else {
+            console.log("Form submitted successfully");
+        }
+    });
 });
