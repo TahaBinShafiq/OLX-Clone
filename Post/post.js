@@ -189,7 +189,7 @@ container.innerHTML = `
 const categoryInput = document.getElementById("categoryInput");
 const imageUpload = document.getElementById("imageUpload");
 const brandField = document.getElementById("brandInput");
-const titleField = document.getElementById("descriptionField");
+const titleField = document.getElementById("titleField");
 const descriptionField = document.getElementById("descriptionField");
 const regionField = document.getElementById("regionField");
 const priceField = document.getElementById("priceField");
@@ -271,7 +271,7 @@ postBtn.addEventListener("click", async function (e) {
 
             alert("Post saved successfully!");
             if(postForm){
-                postForm.reset(); // Form reset
+                imageUpload.value = ""
             }
         } catch (error) {
             console.error("Error saving post:", error);
