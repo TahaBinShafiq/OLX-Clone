@@ -1,3 +1,7 @@
+import { doc, setDoc } from "../firestore-db.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+import { db } from "../config.js";
+
 const categoris = document.querySelectorAll(".category-btn")
 
 categoris.forEach(btn => {
@@ -99,6 +103,7 @@ container.innerHTML = `
       <span class="error-msg">Fill this Field</span>
     </div>
   </div>
+  <br>
 
   <div class="line"></div>
   <div class="brand-section">
@@ -213,21 +218,12 @@ fileInput.addEventListener("change", (e) => {
 });
 
 const postBtn = document.getElementById("postBtn");
+const postForm = document.getElementById("postForm")
 
 
-postBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // Form submit rok do
-
-    // Sab inputs ko array me daalo
-    const inputs = [
-        imageUpload,
-        brandField,
-        titleField,
-        descriptionField,
-        regionField,
-        priceField,
-        ownerNameField,
-        ownerPhoneField
+postBtn.addEventListener("click", async function (e) {
+    e.preventDefault();
+    const inputs = [imageUpload, brandField, titleField, descriptionField, regionField, priceField, ownerNameField, ownerPhoneField
     ];
 
     let isValid = true;
@@ -255,8 +251,33 @@ postBtn.addEventListener("click", function (e) {
     });
 
     if (isValid) {
-        console.log("Form submitted successfully!");
-        // Agar backend submit chahiye: postForm.submit();
+        const auth = getAuth();
+        const user = auth.currentUser;
+        try {
+            const newDocRef = doc(db, "posts",  user.uid)
+            await setDoc(newDocRef, {
+                postOwnerId: user.uid,
+                category: categoryInput.value,
+                brand: brandField.value,
+                title: titleField.value,
+                description: descriptionField.value,
+                region: regionField.value,
+                price: priceField.value,
+                ownerName: ownerNameField.value,
+                ownerPhone: ownerPhoneField.value,
+                timestamp: Date.now(),
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrmbEEUOzvUm5sSXoEL0gjmTUutwQSDqKpg&s"
+            });
+
+            alert("Post saved successfully!");
+            if(postForm){
+                postForm.reset(); // Form reset
+            }
+        } catch (error) {
+            console.error("Error saving post:", error);
+            alert("Failed to save post. Try again!");
+        }
+
     } else {
         console.log("Form has empty fields, fix them first.");
     }

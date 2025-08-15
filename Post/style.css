@@ -21,6 +21,10 @@ main {
   width: 72%;
 }
 
+#descriptionField{
+  width: 85%;
+}
+
 .back-arrow {
   font-size: 20px;
   cursor: pointer;
@@ -145,7 +149,7 @@ main {
 }
 
 .input-brand {
-  width: 70%;
+  width: 85%;
   height: 40px;
   padding: 0px;
   border: 1px solid #ccc;
