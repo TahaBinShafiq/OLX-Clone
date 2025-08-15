@@ -275,7 +275,7 @@ postBtn.addEventListener("click", async function (e) {
                 ownerName: ownerNameField.value,
                 ownerPhone: ownerPhoneField.value,
                 timestamp: new Date().toISOString(),
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrmbEEUOzvUm5sSXoEL0gjmTUutwQSDqKpg&s"
+                image: "https://images.olx.com.pk/thumbnails/560103586-800x600.webp"
             });
             if (postForm) {
                 postForm.reset(); // Form reset

@@ -1,5 +1,5 @@
 import { auth, db } from "./config.js"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut , updateProfile } from "./auth.js"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "./auth.js"
 import { setDoc, collection, doc, getDocs, getDoc } from "./firestore-db.js";
 
 function openLoginModal() {
@@ -94,7 +94,7 @@ function resgisterUser(event) {
       // Signed up 
       const user = userCredential.user;
 
-       await updateProfile(user, {
+      await updateProfile(user, {
         displayName: fullName.value
       });
 
@@ -141,7 +141,7 @@ function loginUser() {
     return;
   }
 
-  signInWithEmailAndPassword(auth, email, password ,)
+  signInWithEmailAndPassword(auth, email, password,)
     .then((userCredential) => {
       closeLoginModal();
       // Signed in 
@@ -191,8 +191,8 @@ function checkLoggedInUser() {
       const docRef = doc(db, "users", user.uid);
       const docSnap = await getDoc(docRef);
 
-      if(docSnap.exists()){
-         document.getElementById("userName").innerHTML = docSnap.data().fullName
+      if (docSnap.exists()) {
+        document.getElementById("userName").innerHTML = docSnap.data().fullName
       }
     } else {
       // User is signed out
@@ -237,7 +237,7 @@ document.getElementById("sellBtn").addEventListener("click", () => {
     openLoginModal();
     const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
       if (loggedInUser) {
-        unsubscribe(); 
+        unsubscribe();
         window.location.href = "./Post/categoris.html";
       }
     });
@@ -246,3 +246,37 @@ document.getElementById("sellBtn").addEventListener("click", () => {
     window.location.href = "./Post/categoris.html";
   }
 });
+
+
+
+
+
+
+async function getPost() {
+  try {
+    const getPost = await getDocs(collection(db, "posts"));
+    const cardsContainer = document.getElementById("card")
+    getPost.docs.map((doc) => {
+      const post = doc.data();
+      console.log(post);
+      cardsContainer.innerHTML += `  <div class="product-card">
+            <img src="${post.image}" alt="Product Image">
+            <div class="product-info">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 class="price">Rs. ${post.price}</h3>
+                    <div>
+                        ❤️
+                    </div>
+                </div>
+                <p class="title">${post.title}</p>
+                <p class="location">DHA Defence, Lahore</p>
+                <p class="time">1 week ago</p>
+            </div>
+        </div>`
+    })
+  } catch (error) {
+  }
+
+}
+
+getPost();
