@@ -258,8 +258,8 @@ async function getPost() {
     const cardsContainer = document.getElementById("card")
     getPost.docs.map((doc) => {
       const post = doc.data();
-      console.log(post);
-      cardsContainer.innerHTML += `<a href="">  <div class="product-card">
+      console.log(post.postOwnerId);
+      cardsContainer.innerHTML += `<a href="./product-detail/product.html?id=${post.postOwnerId}">  <div class="product-card">
             <img src="${post.image}" alt="Product Image">
             <div class="product-info">
                 <div style="display: flex; justify-content: space-between; align-items: center;">

@@ -5,10 +5,7 @@ console.log(id);
 let productData;
 
 async function getProductData() {
-    let response = await fetch(`https://dummyjson.com/products/${id}`)
-    let data = await response.json()
-    productData = data
-
+   
     let loader = document.getElementById("loader")
     loader.style.display = "none";
     let spinnerCont = document.getElementById("spinner-cont")
@@ -18,8 +15,7 @@ async function getProductData() {
  
 
 
-    let { title, images, price, shippingInformation, warrantyInformation, description, brand, availabilityStatus,
-        weight, returnPolicy, minimumOrderQuantity, rating, stock } = data;
+    let {  } = data;
     let { width, height, depth } = data.dimensions;
     console.log(title)
 
