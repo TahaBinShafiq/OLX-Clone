@@ -1,7 +1,7 @@
 let productId = new URLSearchParams(window.location.search).get('id');
 console.log(productId);
 let id = productId
-console.log(id);
+
 let productData;
 
 async function getProductData() {
