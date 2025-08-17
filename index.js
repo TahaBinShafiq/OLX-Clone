@@ -259,7 +259,7 @@ async function getPost() {
     getPost.docs.map((doc) => {
       const post = doc.data();
       console.log(post);
-      cardsContainer.innerHTML += `  <div class="product-card">
+      cardsContainer.innerHTML += `<a href="">  <div class="product-card">
             <img src="${post.image}" alt="Product Image">
             <div class="product-info">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -272,7 +272,7 @@ async function getPost() {
                 <p class="location">${post.region}</p>
                 <p class="time">${post.timestamp}</p>
             </div>
-        </div>`
+        </div></a>`
     })
   } catch (error) {
   }
