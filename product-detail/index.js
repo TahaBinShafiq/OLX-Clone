@@ -16,6 +16,8 @@ async function getProductData() {
 
 
     let {  } = data;
+    console.log(title)
+
     let slider = document.getElementById("left-side")
 
     let carouselItems = images.map((img, index) => {
