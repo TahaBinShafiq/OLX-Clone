@@ -17,7 +17,7 @@ async function getProductData() {
 
     let {  } = data;
     let { width, height, depth } = data.dimensions;
-    console.log(title)
+
 
     let slider = document.getElementById("left-side")
 
