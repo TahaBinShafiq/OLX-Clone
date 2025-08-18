@@ -17,7 +17,7 @@ function openLoginModal() {
  }
 }
 
-document.getElementById("login-word").addEventListener("click", openLoginModal)
+document.getElementById("login-word")?.addEventListener("click", openLoginModal)
 
 function closeLoginModal() {
   document.getElementById("loginModal").style.display = "none";
@@ -284,4 +284,4 @@ async function getPost() {
 
 getPost();
 
-export{ checkLoggedInUser , openLoginModal , resgisterUser , registerBtn , loginUser , sellBtn}
+export{ checkLoggedInUser , openLoginModal , resgisterUser , registerBtn , loginUser , sellBtn , onAuthStateChanged}

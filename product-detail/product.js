@@ -1,10 +1,10 @@
 import { db } from "../config.js";
 import { doc, getDoc } from "../firestore-db.js";
-import { checkLoggedInUser, openLoginModal, resgisterUser, registerBtn, loginUser, sellBtn } from "../index.js"
+import { checkLoggedInUser, openLoginModal, resgisterUser, registerBtn, loginUser, sellBtn , } from "../index.js"
 
 
 
-sellBtn.addEventListener("click", () => {
+sellBtn?.addEventListener("click", () => {
   if (checkLoggedInUser()) {
     window.location.href = "../Post/categoris.html";
   } else {

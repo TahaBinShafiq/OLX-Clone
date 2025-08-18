@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,100;1,300&display=swap');
 
-.modal-content{
+.modal-content {
     width: 350px !important;
 }
+
 .back-btn {
     display: none;
 }
@@ -11,31 +12,19 @@ b {
     color: #3a77ff;
 }
 
+
 .hidden {
     display: none !important;
     transition: 1s !important;
 }
 
-.back_to_top h3 {
-    position: fixed;
-    top: 120px;
-    left: 600px;
-    padding: 10px 30px;
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    z-index: 1000;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 190px;
-}
-
-
 .back-btn {
     display: none;
 }
+
+
+/* header */
+
 
 
 .same__color {
@@ -96,9 +85,8 @@ b {
 }
 
 .all-icons {
-    display: block;
+    display: none;
     height: 40px;
-
 }
 
 .ser-item-3 {
@@ -171,17 +159,6 @@ b {
     height: 48px;
 }
 
-.search__bar i {
-    display: flex;
-    gap: 5px;
-    background-color: #012f34;
-    padding: 18px;
-    position: absolute;
-    right: 0;
-    color: #fff;
-    width: 100px;
-    cursor: pointer;
-}
 
 .login__btn {
     text-decoration: none;
@@ -327,20 +304,27 @@ b {
     padding-top: 0px;
 }
 
+.second-item-first-nav {
+    height: 50px;
+    width: 300px;
+    background-color: #002F34;
+    display: flex;
+
+}
+
 
 
 .profile-dropdown {
     display: none !;
-    z-index: 9999;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 50px;
 }
 
 .py-5 {
     padding: 0px !important;
+}
 
+.container {
+    padding: 0px !important;
 }
 
 */ .col-12 {
@@ -357,7 +341,7 @@ b {
 
 
 .dropdown-menu {
-    display: block;
+    display: block !important;
     visibility: hidden;
     opacity: 0;
     -webkit-transform: translateY(20px);
@@ -367,7 +351,8 @@ b {
     -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     width: min-content;
-
+    z-index: 999999;
+    background-color: #003333;
 }
 
 .status {
@@ -427,9 +412,9 @@ b {
 }
 
 .pb-2 {
-    position: absolute;
-    right: 0px;
-    z-index: 9999;
+    position: absolute !important;
+    right: 0px !important;
+    z-index: 9999999999 !important;
 }
 
 .avatar-md {
@@ -474,6 +459,9 @@ b {
     display: table;
 
 }
+
+
+
 
 
 
@@ -705,60 +693,6 @@ p {
 }
 
 
-
-.motor-a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-
-}
-
-.motor-span {
-    font-weight: 600;
-    color: black;
-}
-
-.actions-links {
-    display: flex;
-    gap: 20px;
-}
-
-.sell-svg {
-    position: relative;
-}
-
-
-.sell-span {
-    position: absolute;
-    top: 13px;
-    left: 45px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.sell-plus-icon {
-    position: absolute;
-    top: 11px;
-    left: 25px;
-}
-
-.circle-icon {
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.circle-icon:hover {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: #bfd1f8;
-}
 
 
 .carousel {
@@ -1142,6 +1076,10 @@ p {
         justify-content: center;
         align-items: center;
         z-index: 1999;
+    }
+
+    .menu-div {
+        display: none;
     }
 
 }
