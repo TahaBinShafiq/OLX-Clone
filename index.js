@@ -258,7 +258,7 @@ async function getPost() {
   try {
     const getPost = await getDocs(collection(db, "posts"));
     const cardsContainer = document.getElementById("card")
-    getPost.docs.map((doc) => {
+    getPost.docs.reverse().map((doc) => {
       const post = doc.data();
       const postId = doc.id;
       cardsContainer.innerHTML += `<a href="./product-detail/product.html?id=${postId}" style="text-decoration:none; height:fit-content">  <div class="product-card">
