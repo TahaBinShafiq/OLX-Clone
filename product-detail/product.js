@@ -1,12 +1,12 @@
 import { db } from "../config.js";
 import { doc, getDoc } from "../firestore-db.js";
-import { checkLoggedInUser, openLoginModal, sellBtn} from "../index.js"
+import { checkLoggedInUser, openLoginModal, sellBtn } from "../index.js"
 
-if(sellBtn){
-  sellBtn.addEventListener("click" , ()=>{
-    if(checkLoggedInUser()){
+if (sellBtn) {
+  sellBtn.addEventListener("click", () => {
+    if (checkLoggedInUser()) {
       window.location.href = "../post/categoris.html"
-    }else{
+    } else {
       openLoginModal();
     }
   })
@@ -41,7 +41,7 @@ async function getProductData() {
     console.log("No such document!");
   }
 
-  let { image, price, description, region, timestamp, title, brand, ownerName , ownerPhone} = productData;
+  let { image, price, description, region, timestamp, title, brand, ownerName, ownerPhone } = productData;
   let slider = document.getElementById("left-side");
 
   let buttons = "";
@@ -243,6 +243,11 @@ checkLoggedInUser();
 
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "show-phone") {
-    e.target.innerHTML = productData.ownerPhone; 
+    if (e.target.dataset.shown === "true") {
+      window.location.href = `tel:${productData.ownerPhone}`;
+    } else {
+      e.target.innerHTML = productData.ownerPhone;
+      e.target.dataset.shown = "true";
+    }
   }
 });
