@@ -3,15 +3,18 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthState
 import { setDoc, collection, doc, getDocs, getDoc } from "./firestore-db.js";
 
 function openLoginModal() {
-  document.getElementById("loginModal").style.display = "block";
-  let loginbtn = document.getElementById("login-btn")
-  loginbtn.onclick = function () {
-    loginUser();
-    let email = document.getElementById("loginEmail");
-    let password = document.getElementById("loginPassword");
-    email.value = "";
-    password.value = "";
-  }
+ let loginModla = document.getElementById("loginModal");
+ if(loginModla){
+   loginModla.style.display = "block";
+   let loginbtn = document.getElementById("login-btn")
+   loginbtn.onclick = function () {
+     loginUser();
+     let email = document.getElementById("loginEmail");
+     let password = document.getElementById("loginPassword");
+     email.value = "";
+     password.value = "";
+   }
+ }
 }
 
 document.getElementById("login-word").addEventListener("click", openLoginModal)
@@ -19,7 +22,7 @@ document.getElementById("login-word").addEventListener("click", openLoginModal)
 function closeLoginModal() {
   document.getElementById("loginModal").style.display = "none";
 }
-document.getElementById("closeLogin").addEventListener("click", closeLoginModal)
+document.getElementById("closeLogin")?.addEventListener("click", closeLoginModal)
 
 function openRegisterModal() {
   closeLoginModal();
@@ -47,11 +50,11 @@ function openRegisterModal() {
   para.innerHTML = "";
 }
 
-document.getElementById("creat-account").addEventListener("click", openRegisterModal)
+document.getElementById("creat-account")?.addEventListener("click", openRegisterModal)
 function closeRegisterModal() {
   document.getElementById("registerModal").style.display = "none";
 }
-document.getElementById("closeRegister").addEventListener("click", closeRegisterModal)
+document.getElementById("closeRegister")?.addEventListener("click", closeRegisterModal)
 
 
 
@@ -74,8 +77,8 @@ function passwrodTypeChnge() {
   }
 };
 
-passEye.addEventListener("click", passwrodTypeChnge)
-NewPasswordEyeImg.addEventListener("click", passwrodTypeChnge)
+passEye?.addEventListener("click", passwrodTypeChnge)
+NewPasswordEyeImg?.addEventListener("click", passwrodTypeChnge)
 
 
 
@@ -130,7 +133,7 @@ function resgisterUser(event) {
 
 
 let registerBtn = document.getElementById("register-btn")
-registerBtn.addEventListener("click", resgisterUser)
+registerBtn?.addEventListener("click", resgisterUser)
 
 
 function loginUser() {
@@ -173,7 +176,7 @@ function loginUser() {
 }
 
 let loginbtn = document.getElementById("login-btn")
-loginbtn.addEventListener("click", loginUser);
+loginbtn?.addEventListener("click", loginUser);
 
 
 
@@ -216,7 +219,7 @@ function logoutUser() {
     // An error happened.
   });
 }
-document.getElementById("logout").addEventListener("click", logoutUser)
+document.getElementById("logout")?.addEventListener("click", logoutUser)
 
 
 async function getuserToDb(userEmail, userName, userId) {
@@ -230,7 +233,7 @@ async function getuserToDb(userEmail, userName, userId) {
 
 
 
-document.getElementById("sellBtn").addEventListener("click", () => {
+document.getElementById("sellBtn")?.addEventListener("click", () => {
   const user = auth.currentUser;
 
   if (!user) {
@@ -280,3 +283,5 @@ async function getPost() {
 }
 
 getPost();
+
+export{ checkLoggedInUser , openLoginModal ,}

@@ -389,6 +389,7 @@
 .pb-2{
     position: absolute;
     right: 0px;
+    z-index: 999999;
 }
 
 .avatar-md {
@@ -992,6 +993,8 @@ h1 {
 #invailed-para {
     display: none;
 }
+
+
 
 
 

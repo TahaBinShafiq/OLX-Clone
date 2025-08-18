@@ -1,5 +1,6 @@
 import { db } from "../config.js";
 import { doc, getDoc } from "../firestore-db.js";
+import {checkLoggedInUser , openLoginModal} from "../index.js"
 
 let productId = new URLSearchParams(window.location.search).get('id');
 console.log(productId);
@@ -227,3 +228,6 @@ if (heart) {
     toggleHeart(this);
   })
 }
+
+
+checkLoggedInUser();
