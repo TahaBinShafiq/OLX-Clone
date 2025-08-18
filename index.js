@@ -235,7 +235,6 @@ async function getuserToDb(userEmail, userName, userId) {
 const sellBtn = document.getElementById("sellBtn")
 sellBtn?.addEventListener("click", () => {
   const user = auth.currentUser;
-
   if (!user) {
     openLoginModal();
     const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
