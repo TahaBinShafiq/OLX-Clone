@@ -41,7 +41,7 @@ async function getProductData() {
     console.log("No such document!");
   }
 
-  let { image, price, description, region, timestamp, title, brand, ownerName } = productData;
+  let { image, price, description, region, timestamp, title, brand, ownerName , ownerPhone} = productData;
   let slider = document.getElementById("left-side");
 
   let buttons = "";
@@ -198,13 +198,13 @@ async function getProductData() {
                         </div>
                     </div>
                 </div>
-                <div class="phone-btn" id="show-phone">
+                <div class="phone-btn">
                     <svg width="26" height="26" viewBox="0 0 1024 1024" class="ce29fa27">
                         <path
                             d="M784.55 852.4c-331.43-14.64-598.31-281.52-612.94-612.95l149.97-60 91.69 183.43-71 35.5v26.45c0 141.66 115.25 256.9 256.9 256.9h26.45l11.86-23.64 23.68-47.36 183.38 91.74-59.99 149.93zM918.1 643.45L661.16 514.99l-57.47 19.2-30.04 60.03c-74.07-11.1-132.73-69.8-143.87-143.87l60.08-30.04L509 362.88 380.6 105.94l-54.2-20.6-214.18 85.63-26.88 39.8c0 401.37 326.57 727.9 727.94 727.9l39.76-26.88 85.64-214.19-20.61-54.19z">
                         </path>
                     </svg>
-                    <p>Show phone number</p>
+                    <p id="show-phone">Show phone number</p>
                 </div>
                 <div class="phone-btn-2" style="margin-top: 10px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"
@@ -239,5 +239,10 @@ if (heart) {
   })
 }
 
-
 checkLoggedInUser();
+
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "show-phone") {
+    e.target.innerHTML = productData.ownerPhone; 
+  }
+});
