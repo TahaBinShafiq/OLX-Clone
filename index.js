@@ -232,8 +232,8 @@ async function getuserToDb(userEmail, userName, userId) {
 
 
 
-
-document.getElementById("sellBtn")?.addEventListener("click", () => {
+const sellBtn = document.getElementById("sellBtn")
+sellBtn?.addEventListener("click", () => {
   const user = auth.currentUser;
 
   if (!user) {
@@ -284,4 +284,4 @@ async function getPost() {
 
 getPost();
 
-export{ checkLoggedInUser , openLoginModal ,}
+export{ checkLoggedInUser , openLoginModal , resgisterUser , registerBtn , loginUser , sellBtn}
