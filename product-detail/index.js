@@ -8,22 +8,25 @@ let id = productId
 let productData;
 
 async function getProductData() {
-
-  let loader = document.getElementById("loader")
-  loader.style.display = "none";
-  let spinnerCont = document.getElementById("spinner-cont")
-  spinnerCont.style.display = "none"
-  let productDetails = document.getElementById("productDetails")
-  productDetails.style.display = "block"
-
   const docRef = doc(db, 'posts', id);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
     console.log("Document data:", docSnap.data());
     productData = docSnap.data()
+    let loader = document.getElementById("loader")
+    loader.style.display = "none";
+    let spinnerCont = document.getElementById("spinner-cont")
+    spinnerCont.style.display = "none"
+    let productDetails = document.getElementById("productDetails")
+    productDetails.style.display = "block"
   } else {
-    // docSnap.data() will be undefined in this case
+    let loader = document.getElementById("loader")
+    loader.style.display = "none";
+    let spinnerCont = document.getElementById("spinner-cont")
+    spinnerCont.style.display = "none"
+    let productDetails = document.getElementById("productDetails")
+    productDetails.style.display = "block"
     console.log("No such document!");
   }
 
@@ -211,23 +214,16 @@ async function getProductData() {
 
 
 }
+getProductData();
 
 function toggleHeart(element) {
-  let currentFill = element.getAttribute("fill");
-  if (currentFill === "red") {
-    element.setAttribute("fill", "none"); // empty
-    console.log(true)
-  } else {
-    element.setAttribute("fill", "red"); // red
-     console.log(false)
-  }
+  let current = element.getAttribute("fill");
+  element.setAttribute("fill", current === "red" ? "none" : "red");
 }
+
 let heart = document.getElementById("heart")
 if (heart) {
   heart.addEventListener("click", () => {
     toggleHeart(this);
   })
 }
-
-
-getProductData();
