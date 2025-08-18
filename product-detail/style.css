@@ -448,7 +448,7 @@ p {
 .profile_contact_card {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 20px 0px;
     width: 100%;
     height: fit-content;
     flex-direction: column;
