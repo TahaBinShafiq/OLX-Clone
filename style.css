@@ -701,7 +701,7 @@ h1 {
 
 
 .post-container{
-    height: 400px;
+    height: fit-content;
     width: 1030px;
     display: flex;
     flex-direction: row;
