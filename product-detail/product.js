@@ -6,7 +6,7 @@ import { checkLoggedInUser, openLoginModal, resgisterUser, registerBtn, loginUse
 
 sellBtn?.addEventListener("click", () => {
   if (checkLoggedInUser()) {
-    window.location.href = "../Post/categoris.html";
+    window.location.href = "/Post/categoris.html"
   } else {
     openLoginModal();
   }
