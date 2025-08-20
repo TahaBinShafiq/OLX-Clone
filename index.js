@@ -3,18 +3,18 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthState
 import { setDoc, collection, doc, getDocs, getDoc } from "./firestore-db.js";
 
 function openLoginModal() {
- let loginModla = document.getElementById("loginModal");
- if(loginModla){
-   loginModla.style.display = "block";
-   let loginbtn = document.getElementById("login-btn")
-   loginbtn.onclick = function () {
-     loginUser();
-     let email = document.getElementById("loginEmail");
-     let password = document.getElementById("loginPassword");
-     email.value = "";
-     password.value = "";
-   }
- }
+  let loginModla = document.getElementById("loginModal");
+  if (loginModla) {
+    loginModla.style.display = "block";
+    let loginbtn = document.getElementById("login-btn")
+    loginbtn.onclick = function () {
+      loginUser();
+      let email = document.getElementById("loginEmail");
+      let password = document.getElementById("loginPassword");
+      email.value = "";
+      password.value = "";
+    }
+  }
 }
 
 document.getElementById("login-word")?.addEventListener("click", openLoginModal)
@@ -267,7 +267,9 @@ async function getPost() {
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <h3 class="price">Rs. ${post.price}</h3>
                     <div>
-                        ❤️
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 15 15" fill="none">
+<path d="M6.76507 5.23486C6.06634 4.53613 4.93347 4.53613 4.23474 5.23486C3.53601 5.9336 3.53601 7.06646 4.23474 7.7652L7.49991 11.0304L10.7651 7.76519C11.4638 7.06646 11.4638 5.9336 10.7651 5.23486C10.0663 4.53613 8.93347 4.53613 8.23474 5.23486L7.49991 5.9697L6.76507 5.23486Z" stroke-width="0.8" stroke="#002F34" fill="white"/>
+</svg>
                     </div>
                 </div>
                 <p class="title">${post.title}</p>
@@ -283,4 +285,4 @@ async function getPost() {
 
 getPost();
 
-export{ checkLoggedInUser , openLoginModal , resgisterUser , registerBtn , loginUser , sellBtn , onAuthStateChanged}
+export { checkLoggedInUser, openLoginModal, resgisterUser, registerBtn, loginUser, sellBtn, onAuthStateChanged }
