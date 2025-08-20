@@ -89,7 +89,7 @@ async function getProductData() {
       <h1 id="price">Rs. ${price}</h1>
       <h3>${title}</h3>
       </div>
-       <div>
+       <div class="second-div">
         <svg xmlns="http://www.w3.org/2000/svg" id="heart" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /> </svg> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="dad99300"><path fill="currentColor" d="M17.35 3a3.65 3.65 0 1 1 0 7.3 3.62 3.62 0 0 1-2.74-1.25l-4.36 2.31a3.53 3.53 0 0 1 0 1.27l4.36 2.32a3.63 3.63 0 0 1 2.74-1.26 3.65 3.65 0 1 1-3.6 3.02L9.4 14.39a3.63 3.63 0 0 1-2.74 1.26 3.65 3.65 0 1 1 0-7.3c1.1 0 2.07.49 2.74 1.25l4.36-2.31a3.61 3.61 0 0 1-.06-.64A3.65 3.65 0 0 1 17.35 3zm0 12.65a1.7 1.7 0 0 0 0 3.39 1.7 1.7 0 0 0 0-3.39zm-10.7-5.34a1.7 1.7 0 1 0 0 3.39 1.7 1.7 0 0 0 0-3.4zm10.7-5.35a1.7 1.7 0 0 0 0 3.39 1.7 1.7 0 0 0 0-3.39z"></path></svg> </div> </div> <h3 id="productName"></h3> <div class="date">
          <p id="location">${region}</p>
           <p>${timestamp}</p>
@@ -227,10 +227,6 @@ async function getProductData() {
 }
 getProductData();
 
-function toggleHeart(element) {
-  let current = element.getAttribute("fill");
-  element.setAttribute("fill", current === "red" ? "none" : "red");
-}
 
 let heart = document.getElementById("heart")
 if (heart) {
