@@ -1102,4 +1102,8 @@ p {
     .profile_contact_card{
         margin: 0px auto;
     }
+
+    .phone-btn{
+        margin: 5px auto;
+    }
 }
