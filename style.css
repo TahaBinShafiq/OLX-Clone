@@ -5,6 +5,69 @@
     display: none;
 }
 
+.con-1 {
+    background-color: white;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    width: 75px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.con-2 {
+    position: absolute;
+    height: 40px;
+    width: 25px;
+    background-color: #EBF1FF;
+    left: 75px;
+    top: 25px;
+    border-bottom-right-radius: 15px;
+    z-index: 2;
+
+
+}
+
+.con-3 {
+
+    position: absolute;
+    height: 40px;
+    width: 25px;
+    background-color: #EBF1FF;
+    left: 175px;
+    top: 25px;
+    border-bottom-left-radius: 15px;
+    z-index: 2;
+
+}
+
+.con-4 {
+    position: absolute;
+    height: 40px;
+    width: 25px;
+    background-color: white;
+    left: 75px;
+    top: 25px;
+    z-index: 1;
+    
+
+}
+
+.con-5 {
+
+    position: absolute;
+    height: 40px;
+    width: 25px;
+    background-color: white;
+    left: 170px;
+    top: 25px;
+    z-index: 1;
+
+}
+
 
 .same__color {
     background-color: #f7f8f8;
@@ -26,14 +89,14 @@
     width: 100%;
     padding: 0px;
     padding-left: 100px;
-    padding-right: 100px;
+    padding-right: 135px;
     height: 65px;
     background-color: #ebf1ff;
 }
 
 .small__navbar .small__navbar_logo {
     fill: #3a77ff;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
 .second__navbar {
@@ -55,16 +118,17 @@
 .second__navbar .select_option {
     width: 362px;
     height: 48px;
-    border: 1px solid #012f34;
+    border: 1px solid #406367;
     background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
     margin-left: 35px;
     display: flex;
     align-items: center;
+    padding-left: 6px;
 }
 
-.all-icons{
+.all-icons {
     display: none;
 }
 
@@ -98,7 +162,7 @@
 }
 
 .search-btn {
-    height: 48px;
+    height: 50px;
     width: 110px;
     border: none;
     background-color: #002F34;
@@ -114,11 +178,11 @@
 }
 
 .second__navbar .search__bar {
-    width: 492px;
-    border: 1px solid #012f34;
+    width: 535px;
+    border: 1px solid #406367;
     background-color: #fff;
     border-radius: 4px;
-    height: 48px;
+    height: 50px;
     position: relative;
     cursor: pointer;
     display: flex;
@@ -130,7 +194,7 @@
 
 .search__bar input {
     border: none !important;
-    outline:none;
+    outline: none;
     background: none;
     font-size: 17px;
     margin-left: 15px;
@@ -241,6 +305,7 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
+    z-index: 3;
 
 }
 
@@ -272,7 +337,7 @@
     font-weight: 500;
     cursor: pointer;
     font-size: 18px;
-    
+
 }
 
 .menu-list>li {
@@ -281,7 +346,7 @@
 }
 
 .list-hover:hover {
-    color:#3A7BFF;
+    color: #3A7BFF;
 }
 
 
@@ -389,14 +454,14 @@
 
 }
 
-.pb-2{
+.pb-2 {
     position: absolute;
     right: 0px;
     z-index: 999999;
 }
 
 .avatar-md {
-    width: 56px;
+    width: 50px;
     height: 56px;
 
 }
@@ -415,6 +480,7 @@
     height: 3rem;
     font-size: 1rem;
     margin-top: 8px;
+    
 }
 
 
@@ -716,12 +782,12 @@ h1 {
 }
 
 
-.post-container{
+.post-container {
     height: fit-content;
     width: 1030px;
     display: flex;
     flex-direction: row;
-    overflow-x: scroll; 
+    overflow-x: scroll;
     overflow-y: hidden;
     margin: 0px auto;
     gap: 10px;
@@ -735,7 +801,7 @@ h1 {
     background: white;
     border-radius: 5px;
     border: 1px solid gainsboro;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -760,7 +826,7 @@ h1 {
 
 .title {
     font-size: 16px;
-    color:#002F34;
+    color: #002F34;
     margin: 0px 0;
 }
 
@@ -1018,31 +1084,32 @@ h1 {
 
 @media screen and (max-width: 600px) {
 
-    .same__color{
+    .same__color {
         width: 50%;
     }
-    .small__navbar{
+
+    .small__navbar {
         width: 72%;
         height: auto;
-        flex-direction:column ;
+        flex-direction: column;
         justify-content: start !important;
         padding: 0px;
         gap: 10px;
     }
 
-    .logos{
+    .logos {
         width: 100%;
         justify-content: center;
         align-items: center;
         padding-top: 5px;
     }
 
-    .item-2{
+    .item-2 {
         width: 100%;
         justify-content: end !important;
     }
 
-    .all-icons{
+    .all-icons {
         width: 100%;
         justify-content: start;
     }
