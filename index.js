@@ -261,6 +261,9 @@ async function getPost() {
       cardsContainer.style.display = "none";
     if(getPost){
       cardsContainer.style.display = "flex"
+      document.getElementById("main-div").style.display = "none"
+    }else{
+      document.getElementById("main-div").style.display = "block"
     }
     getPost.docs.reverse().map((doc) => {
       const post = doc.data();
