@@ -258,6 +258,10 @@ async function getPost() {
   try {
     const getPost = await getDocs(collection(db, "posts"));
     const cardsContainer = document.getElementById("card")
+      cardsContainer.style.display = "none";
+    if(getPost){
+      cardsContainer.style.display = "flex"
+    }
     getPost.docs.reverse().map((doc) => {
       const post = doc.data();
       const postId = doc.id;
