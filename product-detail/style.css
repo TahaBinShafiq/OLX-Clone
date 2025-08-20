@@ -1085,25 +1085,35 @@ p {
     .headeing-div {
         padding: 0px
     }
-    .second-div{
+
+    .second-div {
         display: flex;
         flex-direction: row;
         padding-right: 5px;
+        padding-bottom: 30px;
     }
 
-    #price{
+    #price {
         font-size: 30px;
     }
 
-    .date{
+    .date {
         padding: 0px;
     }
 
-    .profile_contact_card{
+    .profile_contact_card {
         margin: 0px auto;
     }
 
-    .phone-btn{
+    .phone-btn {
         margin: 5px auto;
+    }
+
+    .phone-btn-2 {
+        margin: 0px auto;
+    }
+
+    .slider-img {
+        border-radius: 0px !important;
     }
 }
