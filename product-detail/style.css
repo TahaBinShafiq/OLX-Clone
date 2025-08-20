@@ -1098,4 +1098,8 @@ p {
     .date{
         padding: 0px;
     }
+
+    .profile_contact_card{
+        margin: 0px auto;
+    }
 }
