@@ -743,19 +743,21 @@ h1 {
 }
 
 .title {
-    font-size: 14px;
-    color: #444;
-    margin: 5px 0;
+    font-size: 16px;
+    color:#002F34;
+    margin: 0px 0;
 }
 
 .location {
-    font-size: 12px;
-    color: gray;
+    font-size: 15px;
+    color: #406367;
+    margin-bottom: 0px;
 }
 
 .time {
     font-size: 12px;
     color: gray;
+    margin-bottom: 3px !important;
 }
 
 .favorite {
