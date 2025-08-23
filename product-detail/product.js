@@ -1,21 +1,23 @@
 import { db } from "../config.js";
 import { doc, getDoc } from "../firestore-db.js";
-import { checkLoggedInUser, openLoginModal, sellBtn } from "../index.js"
+import { checkLoggedInUser, openLoginModal} from "../index.js"
 
-if (sellBtn) {
-  sellBtn.addEventListener("click", () => {
-    if (checkLoggedInUser()) {
-      window.location.href = "../post/categoris.html"
-    } else {
+
+const sellBtn = document.getElementById("sellBtn2");
+if(sellBtn){
+  sellBtn.addEventListener("click" , () => {
+    if(checkLoggedInUser()){
+      window.location.href = "../Post/categoris.html"
+    }else{
       openLoginModal();
     }
   })
 }
 
+
 let productId = new URLSearchParams(window.location.search).get('id');
 console.log(productId);
 let id = productId
-
 let productData;
 
 async function getProductData() {
