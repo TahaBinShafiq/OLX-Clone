@@ -266,8 +266,9 @@ b {
 
 
 .menu-div {
-    margin-top: 12px;
+    margin-top: 145px !important;
     margin-left: 88px;
+
 }
 
 .menu-list {
@@ -275,7 +276,6 @@ b {
     gap: 25px;
     list-style: none;
     align-items: center;
-
 }
 
 .all-categoris-span {
