@@ -43,7 +43,7 @@ b {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between !important;
     width: 100%;
     padding: 0px;
     padding-left: 100px;
