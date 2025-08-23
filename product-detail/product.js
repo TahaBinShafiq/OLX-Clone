@@ -1,18 +1,31 @@
 import { db } from "../config.js";
+import { getAuth, onAuthStateChanged } from "../auth.js"
 import { doc, getDoc } from "../firestore-db.js";
-import { checkLoggedInUser, openLoginModal} from "../index.js"
+import { openLoginModal } from "../index.js"
 
-
+const auth = getAuth();
 const sellBtn = document.getElementById("sellBtn2");
-if(sellBtn){
-  sellBtn.addEventListener("click" , () => {
-    if(checkLoggedInUser()){
-      window.location.href = "../Post/categoris.html"
-    }else{
+
+if (sellBtn) {
+  sellBtn.addEventListener("click", async () => {
+    const isLoggedIn = await checkLoggedInUser();
+
+    if (!isLoggedIn) {
       openLoginModal();
+    } else {
+      window.location.href = "../Post/categoris.html";
     }
-  })
+  });
 }
+
+function checkLoggedInUser() {
+  return new Promise((resolve) => {
+    onAuthStateChanged(auth, (user) => {
+      resolve(!!user); // true agar user hai, false agar nahi
+    });
+  });
+}
+
 
 
 let productId = new URLSearchParams(window.location.search).get('id');
