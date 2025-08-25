@@ -1128,6 +1128,16 @@ h1 {
 
     }
 
+    .circle-icon-1{
+        display: block;
+    }
+
+    .sell-svg{
+        display: none;
+    }
+
+    
+
     .second__navbar {
         width: fit-content;
         margin: 0px !important;
@@ -1151,7 +1161,7 @@ h1 {
 
     .all-icons {
         width: 100%;
-        justify-content: start;
+        justify-content: space-between;
     }
 
 
@@ -1398,7 +1408,9 @@ h1 {
         border: none;
         box-shadow: 0 10px 30px 0 rgba(31, 45, 61, 0.1);
         border-radius: .5rem;
-        left: 0px;
+        /* left: 0px; */
+        top: -290px;
+        right: 10px;
 
     }
 
