@@ -57,6 +57,7 @@ async function getProductData() {
   }
 
   let { image, price, description, region, timestamp, title, brand, ownerName, ownerPhone } = productData;
+
   let slider = document.getElementById("left-side");
 
   let buttons = "";
