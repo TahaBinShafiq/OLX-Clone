@@ -1150,9 +1150,10 @@ h1 {
     .second__navbar {
         width: 100%;
         margin: 0px !important;
-        padding: 0px;
-        justify-content: start;
-        
+        padding: 10px 15px;
+        gap: 10px;
+        justify-content: none;
+        height: fit-content;
     }
 
 
@@ -1172,7 +1173,7 @@ h1 {
     }
 
     .search__bar {
-        width: 295px;
+        width: 295px !important;
         border-radius: 5px !important;
         height: 40px !important;
     }
@@ -1203,11 +1204,13 @@ h1 {
     }
 
     .heart-icon-div{
-        display: block !important;
+        display: flex !important;
         height: 40px !important;
         width: 40px !important;
         box-shadow: 1px 1px 5px gainsboro;
         border-radius: 5px;
+        justify-content: center;
+        align-items: center;
     }
 
 
