@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.circle-icon-1{
+    display: none;
+}
+
 .con-1 {
     background-color: white;
     height: 68px;
@@ -300,6 +304,12 @@
 .actions-links {
     display: flex;
     gap: 20px;
+}
+
+.item-2{
+    display: flex;
+    align-items: center;
+    gap: 0px;
 }
 
 
@@ -1110,12 +1120,12 @@ h1 {
         gap: 10px;
     }
 
-    .sell-svg {}
 
     .logos {
         width: 100%;
-        justify-content: start !important;
+        justify-content:center;
         padding-top: 5px;
+
     }
 
     .second__navbar {
@@ -1133,7 +1143,10 @@ h1 {
 
     .item-2 {
         width: 100%;
-        justify-content: end !important;
+        position: fixed;
+        bottom: 0px;
+        background-color: white;
+        height: 60px;
     }
 
     .all-icons {
