@@ -5,15 +5,16 @@
     display: none;
 }
 
-.heart-icon-div{
+.heart-icon-div {
     display: none;
 }
+
 .logos {
     display: flex;
     align-items: center;
 }
 
-.circle-icon-1{
+.circle-icon-1 {
     display: none;
 }
 
@@ -310,7 +311,7 @@
     gap: 20px;
 }
 
-.item-2{
+.item-2 {
     display: flex;
     align-items: center;
     gap: 0px;
@@ -523,7 +524,7 @@
 
 }
 
-.search-bar-container{
+.search-bar-container {
     display: flex;
     align-items: center;
 }
@@ -1110,6 +1111,9 @@ h1 {
 
     .same__color {
         width: 100%;
+        background-image: url('https://www.olx.com.pk/assets/mobile-header-bg.19e7119f4143ec8cb185e5d56af7c093.png');
+        background-size: contain;
+        border: none;
     }
 
     .con-2,
@@ -1127,25 +1131,59 @@ h1 {
         justify-content: start !important;
         padding: 0px;
         gap: 10px;
+        background-color: transparent;
     }
 
 
     .logos {
         width: 100%;
-        justify-content:center;
-        padding-top: 5px;
+        padding: 17px 10px;
+        height: 80px;
 
     }
 
-    .circle-icon-1{
+    .actions-links{
+        gap: 10px;
+    }
+
+    .con-1 {
+        margin: 0px;
+        padding: 0px;
+        border-radius: 0px;
+        z-index: 0;
+        background-color:#002F34;
+        height: 55px;
+        width: 109px;
+        border-radius: 5px ;
+    }
+
+    .motor-a{
+        height: 55px;
+        width: 109px;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        gap: 0px;
+        border-radius: 5px;
+    }
+
+    .path{
+        fill: white !important;
+    }
+
+    .small__navbar_logo {
+        height: fit-content;
+        margin-right: 10px !important;
+    }
+
+    .circle-icon-1 {
         display: block;
     }
 
-    .sell-svg{
+    .sell-svg {
         display: none;
     }
 
-    
+
 
     .second__navbar {
         width: 100%;
@@ -1157,14 +1195,15 @@ h1 {
     }
 
 
-    .second-navbar__logo{
+    .second-navbar__logo {
         display: none;
     }
-    .search-bar-container{
+
+    .search-bar-container {
         width: 295px;
     }
 
-    .search-btn{
+    .search-btn {
         display: none;
     }
 
@@ -1176,6 +1215,8 @@ h1 {
         width: 295px !important;
         border-radius: 5px !important;
         height: 40px !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .102);
+        border: 1px solid #e8ecec;
     }
 
     .item-2 {
@@ -1193,17 +1234,17 @@ h1 {
         position: relative;
     }
 
-    .circle-icon-1{
+    .circle-icon-1 {
         position: fixed;
         bottom: 32px;
         left: 45%;
     }
 
-    .circle-icon-2{
+    .circle-icon-2 {
         margin-right: 7px;
     }
 
-    .heart-icon-div{
+    .heart-icon-div {
         display: flex !important;
         height: 40px !important;
         width: 40px !important;
@@ -1211,6 +1252,7 @@ h1 {
         border-radius: 5px;
         justify-content: center;
         align-items: center;
+        background-color: white;
     }
 
 
