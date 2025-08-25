@@ -1142,7 +1142,7 @@ h1 {
 
     }
 
-    .actions-links{
+    .actions-links {
         gap: 10px;
     }
 
@@ -1151,13 +1151,13 @@ h1 {
         padding: 0px;
         border-radius: 0px;
         z-index: 0;
-        background-color:#002F34;
+        background-color: #002F34;
         height: 55px;
         width: 109px;
-        border-radius: 5px ;
+        border-radius: 5px;
     }
 
-    .motor-a{
+    .motor-a {
         height: 55px;
         width: 109px;
         flex-direction: column;
@@ -1166,7 +1166,7 @@ h1 {
         border-radius: 5px;
     }
 
-    .path{
+    .path {
         fill: white !important;
     }
 
@@ -1232,7 +1232,10 @@ h1 {
         justify-content: space-between;
         padding: 0px 20px 0px 10px;
         position: relative;
+        display: flex;
     }
+
+
 
     .circle-icon-1 {
         position: fixed;
@@ -1271,11 +1274,30 @@ h1 {
 
     }
 
+    .hero {
+        margin-top: 170px !important;
+    }
+
     .slider {
-        background-image: url('https://images.olx.com.pk/thumbnails/527654933-800x600.webp');
-        width: 100%;
-        margin-left: 0px;
+        background-image: url('https://images.olx.com.pk/thumbnails/560615254-800x600.webp');
+        width: 94%;
         background-size: cover;
+        margin: 0px auto;
+        height: 150px;
+        margin-top: 40px !important;
+
+
+    }
+
+    .slider-2 {
+        background-image: url('https://images.olx.com.pk/thumbnails/562931117-800x600.webp');
+        width: 94%;
+        margin: 0px auto;
+        background-size: contain;
+        background-position: center;
+        height: 150px;
+        margin-top: 20px !important;
+
 
     }
 
