@@ -250,6 +250,23 @@ sellBtn?.addEventListener("click", () => {
 });
 
 
+const sellBtn3 = document.getElementById("sellBtn2")
+sellBtn3?.addEventListener("click", () => {
+  const user = auth.currentUser;
+  if (!user) {
+    openLoginModal();
+    const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
+      if (loggedInUser) {
+        unsubscribe();
+        window.location.href = "./Post/categoris.html";
+      }
+    });
+
+  } else {
+    window.location.href = "./Post/categoris.html";
+  }
+});
+
 
 
 
@@ -258,11 +275,11 @@ async function getPost() {
   try {
     const getPost = await getDocs(collection(db, "posts"));
     const cardsContainer = document.getElementById("card")
-      cardsContainer.style.display = "none";
-    if(getPost){
+    cardsContainer.style.display = "none";
+    if (getPost) {
       cardsContainer.style.display = "flex"
       document.getElementById("main-div").style.display = "none"
-    }else{
+    } else {
       document.getElementById("main-div").style.display = "block"
     }
     getPost.docs.reverse().map((doc) => {
