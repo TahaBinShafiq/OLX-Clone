@@ -961,7 +961,7 @@ p {
 @media screen and (max-width: 600px) {
 
     .same__color {
-        display: none;
+        display: none ;
     }
 
     .third__navbar {

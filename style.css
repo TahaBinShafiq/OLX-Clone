@@ -1085,7 +1085,11 @@ h1 {
 @media screen and (max-width: 600px) {
 
     .same__color {
-        width: 50%;
+        width: 100%;
+    }
+    .con-2, .con-3 ,.con-4,.con-5{
+        display: none;
+
     }
 
     .small__navbar {
@@ -1102,6 +1106,14 @@ h1 {
         justify-content: center;
         align-items: center;
         padding-top: 5px;
+    }
+
+    .second__navbar{
+        width: 100%;
+    }
+
+    .select_option{
+        display: none !important;
     }
 
     .item-2 {
