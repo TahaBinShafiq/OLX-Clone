@@ -852,7 +852,10 @@ h1 {
 .title {
     font-size: 16px;
     color: #002F34;
-    margin: 0px 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .location {
@@ -1278,6 +1281,10 @@ h1 {
         margin-top: 170px !important;
     }
 
+    h4 {
+        margin-left: 10px !important;
+    }
+
     .slider {
         background-image: url('https://images.olx.com.pk/thumbnails/560615254-800x600.webp');
         width: 94%;
@@ -1285,8 +1292,6 @@ h1 {
         margin: 0px auto;
         height: 150px;
         margin-top: 40px !important;
-
-
     }
 
     .slider-2 {
@@ -1547,6 +1552,15 @@ h1 {
 
     .post-container {
         width: 100%;
+        padding-left: 20px;
+        height: fit-content !important;
+        padding-bottom: 10px;
+        padding-right: 20px;
+    }
+
+    .product-card {
+        width: 213px;
+        height: 339px;
     }
 
     /* .media-profile{
