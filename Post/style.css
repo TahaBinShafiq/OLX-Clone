@@ -8,7 +8,7 @@ main {
   height: 1200px;
 }
 
-.main-con{
+.main-con {
   display: flex;
   justify-content: center;
   width: 1000px;
@@ -332,34 +332,42 @@ textarea:focus-within {
 
 @media screen and (max-width:600px) {
 
-  .main-con{
-    width: 100%;
+  .main-con {
+    width: 93%;
+    padding: 10px;
   }
 
-  .card{
+  .card {
     display: none;
   }
 
-  #post-container{
+
+  #post-container {
     margin: 0px;
-    width: 100%;
+    width: 95% !important;
+    padding: 10px;
   }
 
-  .category-box{
+  .category-box {
     flex-direction: column;
     justify-content: start !important;
-    width:100% !important;
+    width: 100% !important;
   }
-  .upload-section{
+
+  .upload-section {
     flex-direction: column;
   }
 
-  .brand-section{
+  .brand-section {
     flex-direction: column;
     width: 100%;
   }
 
-  .input-container{
+  .input-container {
     width: 100%;
+  }
+
+  .input-brand {
+    width: 97%;
   }
 }
