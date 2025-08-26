@@ -8,6 +8,13 @@ main {
   height: 1200px;
 }
 
+.main-con{
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  margin: 0px auto;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -17,11 +24,11 @@ main {
   background-color: #F7F8F8;
 }
 
-.input-container{
+.input-container {
   width: 72%;
 }
 
-#descriptionField{
+#descriptionField {
   width: 85%;
 }
 
@@ -161,7 +168,15 @@ main {
   padding-left: 10px;
 }
 
-.error-msg{
+.input-brand select {
+  width: 95%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.error-msg {
   font-size: 10px;
   padding-left: 5px;
   padding-top: 2px;
@@ -311,4 +326,40 @@ textarea:focus-within {
 .error {
   color: red;
   font-size: 12px;
+}
+
+
+
+@media screen and (max-width:600px) {
+
+  .main-con{
+    width: 100%;
+  }
+
+  .card{
+    display: none;
+  }
+
+  #post-container{
+    margin: 0px;
+    width: 100%;
+  }
+
+  .category-box{
+    flex-direction: column;
+    justify-content: start !important;
+    width:100% !important;
+  }
+  .upload-section{
+    flex-direction: column;
+  }
+
+  .brand-section{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-container{
+    width: 100%;
+  }
 }
