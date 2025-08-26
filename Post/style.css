@@ -355,6 +355,10 @@ textarea:focus-within {
     align-items: start;
   }
 
+  #descriptionField {
+    width: 97% !important;
+  }
+
   .upload-section {
     flex-direction: column;
   }
