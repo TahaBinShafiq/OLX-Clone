@@ -352,6 +352,7 @@ textarea:focus-within {
     flex-direction: column;
     justify-content: start !important;
     width: 100% !important;
+    align-items: start;
   }
 
   .upload-section {
