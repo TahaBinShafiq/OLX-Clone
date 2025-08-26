@@ -1194,7 +1194,7 @@ h1 {
         margin: 0px !important;
         padding: 10px 15px;
         gap: 10px;
-        justify-content: none;
+        justify-content: space-between;
         height: fit-content;
     }
 
@@ -1204,7 +1204,7 @@ h1 {
     }
 
     .search-bar-container {
-        width: 295px;
+        width: 100%;
     }
 
     .search-btn {
@@ -1216,7 +1216,7 @@ h1 {
     }
 
     .search__bar {
-        width: 295px !important;
+        width: 100% !important;
         border-radius: 5px !important;
         height: 40px !important;
         box-shadow: 0 2px 10px rgba(0, 0, 0, .102);
