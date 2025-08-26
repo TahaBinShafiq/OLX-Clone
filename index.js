@@ -1,6 +1,6 @@
 import { auth, db } from "./config.js"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "./auth.js"
-import { setDoc, collection, doc, getDocs, getDoc } from "./firestore-db.js";
+import { setDoc, collection, doc, getDocs, getDoc, query, orderBy } from "./firestore-db.js";
 
 function openLoginModal() {
   let loginModla = document.getElementById("loginModal");
@@ -268,12 +268,10 @@ sellBtn3?.addEventListener("click", () => {
 });
 
 
-
-
-
 async function getPost() {
   try {
-    const getPost = await getDocs(collection(db, "posts"));
+    const q = query(collection(db, "posts"), orderBy("timestamp", "desc"));
+    const getPost = await getDocs(q);
     const cardsContainer = document.getElementById("card")
     cardsContainer.style.display = "none";
     if (getPost) {
@@ -282,7 +280,7 @@ async function getPost() {
     } else {
       document.getElementById("main-div").style.display = "block"
     }
-    getPost.docs.reverse().map((doc) => {
+    getPost.docs.map((doc) => {
       const post = doc.data();
       const postId = doc.id;
       cardsContainer.innerHTML += `<a href="./product-detail/product.html?id=${postId}" style="text-decoration:none; height:fit-content">  <div class="product-card">
