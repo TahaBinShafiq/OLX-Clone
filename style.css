@@ -1147,7 +1147,7 @@ h1 {
     }
 
     .actions-links {
-        gap: 10px;
+        width: 60%;
     }
 
     .con-1 {
@@ -1163,7 +1163,7 @@ h1 {
 
     .motor-a {
         height: 55px;
-        width: 109px;
+        width: 109px !important;
         flex-direction: column;
         background-color: #FFFFFF;
         gap: 0px;
