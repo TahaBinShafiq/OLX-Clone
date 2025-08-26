@@ -1554,10 +1554,10 @@ h1 {
 
     .post-container {
         width: 100%;
-        padding-left: 20px;
+        padding-left: 12px;
         height: fit-content !important;
         padding-bottom: 10px;
-        padding-right: 20px;
+        padding-right: 12px;
     }
 
     .product-card {
